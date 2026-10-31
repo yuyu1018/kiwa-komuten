@@ -13,9 +13,10 @@ const browser = await chromium.launch({
 });
 const results = { viewports: [], interactions: [] };
 const expectedAssets = JSON.parse(await readFile(root + 'docs/asset-geometry.json', 'utf8'));
+assert(!(await readFile(root + 'dist/styles.css', 'utf8')).includes('--unit'), 'The viewport scaling unit has been removed');
 
 try {
-  for (const width of [1280, 1440, 1920, 1024, 901, 900, 768, 390, 375, 320]) {
+  for (const width of [1280, 1440, 1920, 2560, 1024, 901, 900, 768, 390, 375, 320]) {
     const context = await browser.newContext({ viewport: { width, height: 960 }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
     const page = await context.newPage();
     const errors = [];
@@ -32,6 +33,7 @@ try {
       scrollWidth: document.documentElement.scrollWidth,
       height: document.documentElement.scrollHeight,
       fontLoaded: document.fonts.check('16px "Noto Serif JP"'),
+      rightGaps: Object.fromEntries(['.brand-visual', '.hero-photo', '.contact', '.news', '.philosophy', '.craft', '.works', '.events', '.footer', '.philosophy-sub', '.craft-photo', '.work-card:last-child .work-photo', '.event-sub .event-photo'].map(selector => [selector, innerWidth - document.querySelector(selector).getBoundingClientRect().right])),
       bodyFonts: Object.fromEntries(['body', '.philosophy-body', '.craft-intro', '.craft-list p', '.work-description', '.event-description', '.contact-intro', '.news-summary', '.text-link', '.contact-link', '.primary-nav a', '.footer-nav a', '#dialog-content'].map(selector => [selector, getComputedStyle(document.querySelector(selector)).fontSize])),
       overflowingText: [...document.querySelectorAll('main p, main h2, main h3, main dd, .footer-nav a, .primary-nav a, main .text-link, .contact-link')].filter(node => node.scrollWidth > node.clientWidth + 1).map(node => ({ text: node.textContent.trim(), className: node.className, width: node.clientWidth, scrollWidth: node.scrollWidth })),
       assets: [...document.images].map(image => {
@@ -50,9 +52,15 @@ try {
     assert.deepEqual(geometry.overflowingText, [], `Text must fit its container at ${width}px`);
     assert(geometry.assets.every(asset => asset.loaded), `Asset missing at ${width}px`);
     assert.deepEqual(errors, [], `Browser errors at ${width}px`);
-    if ([1280, 768, 390].includes(width)) {
+    if (width > 900) {
+      for (const [selector, gap] of Object.entries(geometry.rightGaps)) {
+        const expected = ['.brand-visual', '.hero-photo', '.contact'].includes(selector) ? 0 : 64;
+        assert(Math.abs(gap - expected) < 1, `Right edge at ${width}px for ${selector}: expected ${expected}px, got ${gap}px`);
+      }
+    }
+    if ([1280, 1920, 768, 390].includes(width)) {
       const label = width <= 600 ? 'mobile' : width <= 900 ? 'tablet' : 'desktop';
-      await page.screenshot({ path: `${output}${label}-${width}-16px.png`, fullPage: true });
+      await page.screenshot({ path: `${output}${label}-${width}-layout.png`, fullPage: true });
     }
     if (width === 1280) {
       for (const [previous, next] of [['.news', '.philosophy'], ['.philosophy', '.craft'], ['.craft', '.lower-content'], ['.works', '.events'], ['.events', '.contact'], ['.contact', '.footer']]) {
@@ -72,14 +80,16 @@ try {
         }
         const expected = expectedAssets[filename];
         if (expected) {
-          // Larger type intentionally changes vertical flow, preserving image dimensions and columns.
-          for (const dimension of ['x', 'width', 'height']) {
-            assert(Math.abs(asset.slot[dimension] - expected[dimension]) < 1, `Figma slot mismatch ${filename}: ${dimension}`);
+          assert(asset.slot.width > 0 && asset.slot.height > 0, `Visible supplied asset: ${filename}`);
+          if (!['house-family.png', 'botanical.png', 'wood-shavings.png', 'open-door.png'].includes(filename)) {
+            assert.equal(asset.fit, 'cover', `Preserve the photo crop: ${filename}`);
+            assert(Math.abs(asset.width - asset.slot.width) < 1 && Math.abs(asset.height - asset.slot.height) < 1, `Photo fills its frame: ${filename}`);
           }
         }
       }
       results.interactions.push('Body text and regular links are 16px at every tested width; sections do not overlap');
-      results.interactions.push('13 photo/drawing slots retain Figma columns and dimensions within 1px; SVG dimensions are preserved');
+      results.interactions.push('FV/contact reach the right edge; other desktop sections and their rightmost photos have a 64px right gutter');
+      results.interactions.push('All 13 supplied photos/drawings are retained; photos fill their frames and SVG dimensions are preserved');
       const initialTop = await page.locator('.sidebar').evaluate(node => node.getBoundingClientRect().top);
       await page.evaluate(() => scrollTo(0, 2400));
       assert.equal(await page.locator('.sidebar').evaluate(node => node.getBoundingClientRect().top), initialTop);

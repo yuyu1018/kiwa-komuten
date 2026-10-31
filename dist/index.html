@@ -1,134 +1,506 @@
 <!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="木のぬくもりを、暮らしの真ん中に。木和工務店は、素材と設計、手仕事を大切に、永く心地よく暮らせる住まいを一緒に考えます。">
-  <meta name="theme-color" content="#fcfbf7">
-  <title>木和工務店｜木のぬくもりを、暮らしの真ん中に。</title>
-  <link rel="preload" href="assets/noto-serif-jp-400.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="assets/hero-staircase.png" as="image">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
-</head>
-<body id="top">
-  <a class="skip-link" href="#main">本文へ移動</a>
-  <header class="sidebar">
-    <a class="brand" href="#top" aria-label="木和工務店 トップへ">
-      <span class="brand-name">木 和 工 務 店</span>
-      <span class="brand-subtitle">KIWA KOMUTEN · SINCE 1985</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false"><span>メニュー</span><span class="menu-lines" aria-hidden="true"></span></button>
-    <nav id="primary-nav" class="primary-nav" aria-label="メインナビゲーション">
-      <a href="#philosophy">コンセプト</a>
-      <a href="#story" data-dialog="story">木和工務店ストーリー</a>
-      <a href="#works">施工実績</a>
-      <a href="#craft">家づくりについて</a>
-      <a href="#about" data-dialog="about">木和工務店について</a>
-      <a href="#blog" data-dialog="blog">ブログ</a>
-      <a href="#recruit" data-dialog="recruit">採用情報</a>
-      <a href="#contact">お問い合わせ</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="木のぬくもりを、暮らしの真ん中に。木和工務店は、素材と設計、手仕事を大切に、永く心地よく暮らせる住まいを一緒に考えます。"
+    />
+    <meta name="theme-color" content="#fcfbf7" />
+    <title>木和工務店｜木のぬくもりを、暮らしの真ん中に。</title>
+    <link
+      rel="preload"
+      href="assets/noto-serif-jp-400.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="preload" href="assets/hero-staircase.png" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">本文へ移動</a>
+    <header class="sidebar">
+      <a class="brand" href="#top" aria-label="木和工務店 トップへ">
+        <span class="brand-name">木 和 工 務 店</span>
+        <span class="brand-subtitle">KIWA KOMUTEN · SINCE 1985</span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+      >
+        <span>メニュー</span><span class="menu-lines" aria-hidden="true"></span>
+      </button>
+      <nav
+        id="primary-nav"
+        class="primary-nav"
+        aria-label="メインナビゲーション"
+      >
+        <a href="#philosophy">コンセプト</a>
+        <a href="#story" data-dialog="story">木和工務店ストーリー</a>
+        <a href="#works">施工実績</a>
+        <a href="#craft">家づくりについて</a>
+        <a href="#about" data-dialog="about">木和工務店について</a>
+        <a href="#blog" data-dialog="blog">ブログ</a>
+        <a href="#recruit" data-dialog="recruit">採用情報</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </header>
 
-  <main id="main" class="main-content">
-    <section class="brand-visual" aria-labelledby="hero-heading">
-      <h1 id="hero-heading" class="hero-heading"><span>木のぬくもりを。</span><span>暮らしの真ん中に。</span></h1>
-      <div class="drawing house-family" aria-hidden="true"><img src="assets/house-family.png" alt="" width="2172" height="724"></div>
-    </section>
-    <div class="hero-photo"><img src="assets/hero-staircase.png" alt="木の階段と造作本棚、ギターのある、自然素材のぬくもりを感じる住まい" width="2400" height="1600" fetchpriority="high"></div>
+    <main id="main" class="main-content">
+      <section class="brand-visual" aria-labelledby="hero-heading">
+        <h1 id="hero-heading" class="hero-heading">
+          <span>木のぬくもりを。</span><span>暮らしの真ん中に。</span>
+        </h1>
+        <div class="drawing house-family" aria-hidden="true">
+          <img src="assets/house-family.png" alt="" width="2172" height="724" />
+        </div>
+      </section>
+      <div class="hero-photo">
+        <img
+          src="assets/hero-staircase.png"
+          alt="木の階段と造作本棚、ギターのある、自然素材のぬくもりを感じる住まい"
+          width="2400"
+          height="1600"
+          fetchpriority="high"
+        />
+      </div>
 
-    <section id="news" class="news" aria-labelledby="news-heading">
-      <h2 id="news-heading">お知らせ</h2>
-      <ul class="news-list">
-        <li><a href="#news-open-house" data-dialog="news"><time datetime="2026-06-12">2026.06.12</time><span class="news-summary"><span class="news-tag">見学会</span><span>完成見学会「木のぬくもりと暮らす家」のご案内</span></span><img src="assets/arrow-news.svg" alt="" width="23" height="8.5"></a></li>
-        <li><a href="#news-open-house" data-dialog="news"><time datetime="2026-06-12">2026.06.12</time><span class="news-summary"><span class="news-tag">見学会</span><span>完成見学会「木のぬくもりと暮らす家」のご案内</span></span><img src="assets/arrow-news.svg" alt="" width="23" height="8.5"></a></li>
-      </ul>
-      <a class="text-link news-more" href="#news-list" data-dialog="news-list">一覧を見る<img src="assets/arrow-list.svg" alt="" width="24" height="12"></a>
-    </section>
+      <section id="news" class="news" aria-labelledby="news-heading">
+        <h2 id="news-heading">お知らせ</h2>
+        <ul class="news-list">
+          <li>
+            <a href="#news-open-house" data-dialog="news"
+              ><time datetime="2026-06-12">2026.06.12</time
+              ><span class="news-summary"
+                ><span class="news-tag">見学会</span
+                ><span>完成見学会「木のぬくもりと暮らす家」のご案内</span></span
+              ><img src="assets/arrow-news.svg" alt="" width="23" height="8.5"
+            /></a>
+          </li>
+          <li>
+            <a href="#news-open-house" data-dialog="news"
+              ><time datetime="2026-06-12">2026.06.12</time
+              ><span class="news-summary"
+                ><span class="news-tag">見学会</span
+                ><span>完成見学会「木のぬくもりと暮らす家」のご案内</span></span
+              ><img src="assets/arrow-news.svg" alt="" width="23" height="8.5"
+            /></a>
+          </li>
+        </ul>
+        <a class="text-link news-more" href="#news-list" data-dialog="news-list"
+          >一覧を見る<img
+            src="assets/arrow-list.svg"
+            alt=""
+            width="24"
+            height="12"
+        /></a>
+      </section>
 
-    <section id="philosophy" class="philosophy" aria-labelledby="philosophy-heading">
-      <div class="philosophy-grid">
-        <div class="photo philosophy-main"><img src="assets/philosophy-living.png" alt="木の食卓と本棚が並び、窓の緑が見える明るいリビング・ダイニング" width="900" height="1200" loading="lazy"></div>
-        <div class="philosophy-right">
-          <div class="photo philosophy-sub"><img src="assets/philosophy-dining.png" alt="大きな窓から緑を望む、木の食卓と椅子、花器が並ぶダイニング" width="1000" height="667" loading="lazy"></div>
-          <div class="philosophy-copy">
-            <p class="eyebrow">OUR PHILOSOPHY</p>
-            <h2 id="philosophy-heading">私たちの家づくり</h2>
-            <div class="philosophy-body"><p>住まいに求める心地よさは、 家族の数だけ、暮らしの数だけ。</p><p>木のぬくもりや、やわらかな光。 毎日の何気ない時間を大切にしながら、永く、安心して暮らせる住まいを一緒に考えていきます。</p></div>
-            <a class="text-link" href="#philosophy-detail" data-dialog="philosophy">詳しく見る<img src="assets/arrow-detail.svg" alt="" width="24" height="12"></a>
+      <section
+        id="philosophy"
+        class="philosophy"
+        aria-labelledby="philosophy-heading"
+      >
+        <div class="philosophy-grid">
+          <div class="photo philosophy-main">
+            <img
+              src="assets/philosophy-living.png"
+              alt="木の食卓と本棚が並び、窓の緑が見える明るいリビング・ダイニング"
+              width="900"
+              height="1200"
+              loading="lazy"
+            />
+          </div>
+          <div class="philosophy-right">
+            <div class="philosophy-photo-group">
+              <div class="photo philosophy-sub">
+                <img
+                  src="assets/philosophy-dining.png"
+                  alt="大きな窓から緑を望む、木の食卓と椅子、花器が並ぶダイニング"
+                  width="1000"
+                  height="667"
+                  loading="lazy"
+                />
+              </div>
+              <div class="botanical-position" aria-hidden="true">
+                <div class="drawing botanical">
+                  <img
+                    src="assets/botanical.png"
+                    alt=""
+                    width="1024"
+                    height="1536"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="philosophy-copy">
+              <p class="eyebrow">OUR PHILOSOPHY</p>
+              <h2 id="philosophy-heading">私たちの家づくり</h2>
+              <div class="philosophy-body">
+                <p>住まいに求める心地よさは、 家族の数だけ、暮らしの数だけ。</p>
+                <p>
+                  木のぬくもりや、やわらかな光。
+                  毎日の何気ない時間を大切にしながら、永く、安心して暮らせる住まいを一緒に考えていきます。
+                </p>
+              </div>
+              <a
+                class="text-link"
+                href="#philosophy-detail"
+                data-dialog="philosophy"
+                >詳しく見る<img
+                  src="assets/arrow-detail.svg"
+                  alt=""
+                  width="24"
+                  height="12"
+              /></a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="botanical-position" aria-hidden="true"><div class="drawing botanical"><img src="assets/botanical.png" alt="" width="1024" height="1536" loading="lazy"></div></div>
-    </section>
+      </section>
 
-    <section id="craft" class="craft" aria-labelledby="craft-heading">
-      <div class="craft-grid">
-        <div class="craft-copy">
-          <p class="eyebrow">OUR CRAFT</p>
-          <h2 id="craft-heading">家づくりのこだわり</h2>
-          <p class="craft-intro">永く、心地よく暮らすために。<br>素材と設計、そして手仕事を大切にしています。</p>
-          <ol class="craft-list">
-            <li><span class="craft-number" aria-hidden="true">01</span><div><h3>素材を選ぶ</h3><p>手で触れ、表情を確かめる。 時とともに愛着が深まる素材を。</p></div></li>
-            <li><span class="craft-number" aria-hidden="true">02</span><div><h3>光と風を生かす</h3><p>季節の移ろいを感じながら、 自然と心地よくつながる設計を。</p></div></li>
-            <li><span class="craft-number" aria-hidden="true">03</span><div><h3>丁寧につくる</h3><p>見えないところにも、手をかける。 日々の安心につながる仕事を。</p></div></li>
-          </ol>
-          <a class="text-link craft-more" href="#craft-detail" data-dialog="craft">こだわりを詳しく見る<img src="assets/arrow-detail.svg" alt="" width="24" height="12"></a>
+      <section id="craft" class="craft" aria-labelledby="craft-heading">
+        <div class="craft-grid">
+          <div class="craft-copy">
+            <p class="eyebrow">OUR CRAFT</p>
+            <h2 id="craft-heading">家づくりのこだわり</h2>
+            <p class="craft-intro">
+              永く、心地よく暮らすために。<br />素材と設計、そして手仕事を大切にしています。
+            </p>
+            <ol class="craft-list">
+              <li>
+                <span class="craft-number" aria-hidden="true">01</span>
+                <div>
+                  <h3>素材を選ぶ</h3>
+                  <p>
+                    手で触れ、表情を確かめる。 時とともに愛着が深まる素材を。
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="craft-number" aria-hidden="true">02</span>
+                <div>
+                  <h3>光と風を生かす</h3>
+                  <p>
+                    季節の移ろいを感じながら、 自然と心地よくつながる設計を。
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="craft-number" aria-hidden="true">03</span>
+                <div>
+                  <h3>丁寧につくる</h3>
+                  <p>
+                    見えないところにも、手をかける。
+                    日々の安心につながる仕事を。
+                  </p>
+                </div>
+              </li>
+            </ol>
+            <a
+              class="text-link craft-more"
+              href="#craft-detail"
+              data-dialog="craft"
+              >こだわりを詳しく見る<img
+                src="assets/arrow-detail.svg"
+                alt=""
+                width="24"
+                height="12"
+            /></a>
+          </div>
+          <div class="craft-visual">
+            <div class="photo craft-photo">
+              <img
+                src="assets/craft-workshop.png"
+                alt="緑を望む窓からやわらかな光が差し込む、木の道具が並ぶ静かな工房"
+                width="1080"
+                height="720"
+                loading="lazy"
+              />
+            </div>
+            <div class="drawing wood-shavings" aria-hidden="true">
+              <img
+                src="assets/wood-shavings.png"
+                alt=""
+                width="1672"
+                height="941"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
-        <div class="photo craft-photo"><img src="assets/craft-workshop.png" alt="緑を望む窓からやわらかな光が差し込む、木の道具が並ぶ静かな工房" width="1080" height="720" loading="lazy"></div>
+      </section>
+
+      <div class="lower-content">
+        <section id="works" class="works" aria-labelledby="works-heading">
+          <div class="section-heading">
+            <p class="eyebrow">OUR WORKS</p>
+            <h2 id="works-heading">施工事例</h2>
+            <p class="works-intro">
+              それぞれの暮らしに、<br />それぞれの心地よさを。
+            </p>
+          </div>
+          <div class="works-grid">
+            <article class="work-card" id="work-natural">
+              <a
+                class="photo work-photo"
+                href="#work-natural-detail"
+                data-dialog="work-natural"
+                aria-label="木のぬくもりと、暮らす。の詳細を見る"
+                ><img
+                  src="assets/work-natural.png"
+                  alt="自然光が差し込む、木の家具と落ち着いた色合いのリビング"
+                  width="900"
+                  height="1125"
+                  loading="lazy"
+              /></a>
+              <p class="work-meta">
+                <span>○○県○○市</span><span>新築住宅</span>
+              </p>
+              <h3>木のぬくもりと、暮らす。</h3>
+              <p class="work-description">
+                やわらかな光と自然素材に包まれる、心地よい住まい。
+              </p>
+              <dl class="work-area">
+                <dt>延床面積</dt>
+                <dd>○○.○㎡（○○.○坪）</dd>
+              </dl>
+              <a
+                class="text-link"
+                href="#work-natural-detail"
+                data-dialog="work-natural"
+                aria-label="木のぬくもりと、暮らす。の詳細を見る"
+                >詳しく見る<img
+                  src="assets/arrow-detail.svg"
+                  alt=""
+                  width="24"
+                  height="12"
+              /></a>
+            </article>
+            <article class="work-card" id="work-light">
+              <a
+                class="photo work-photo"
+                href="#work-light-detail"
+                data-dialog="work-light"
+                aria-label="窓の向こうに、季節を感じる。の詳細を見る"
+                ><img
+                  src="assets/work-light.png"
+                  alt="大きな窓からの光と緑を楽しむ、木を取り入れたリビング"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+              /></a>
+              <p class="work-meta">
+                <span>○○県○○市</span><span>リノベーション</span>
+              </p>
+              <h3>窓の向こうに、季節を感じる。</h3>
+              <p class="work-description">
+                外の景色とつながりながら、ゆったりと時を重ねる空間。
+              </p>
+              <dl class="work-area">
+                <dt>延床面積</dt>
+                <dd>○○.○㎡（○○.○坪）</dd>
+              </dl>
+              <a
+                class="text-link"
+                href="#work-light-detail"
+                data-dialog="work-light"
+                aria-label="窓の向こうに、季節を感じる。の詳細を見る"
+                >詳しく見る<img
+                  src="assets/arrow-detail.svg"
+                  alt=""
+                  width="24"
+                  height="12"
+              /></a>
+            </article>
+            <article class="work-card" id="work-renovation">
+              <a
+                class="photo work-photo"
+                href="#work-renovation-detail"
+                data-dialog="work-renovation"
+                aria-label="受け継ぐ住まい、新しい日々。の詳細を見る"
+                ><img
+                  src="assets/work-renovation.png"
+                  alt="木の建具と窓からの光が印象的な、静かな和の住まい"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+              /></a>
+              <p class="work-meta">
+                <span>○○県○○市</span><span>リノベーション</span>
+              </p>
+              <h3>受け継ぐ住まい、新しい日々。</h3>
+              <p class="work-description">
+                昔ながらの佇まいを大切に、これからの暮らしを紡ぐ。
+              </p>
+              <dl class="work-area">
+                <dt>延床面積</dt>
+                <dd>○○.○㎡（○○.○坪）</dd>
+              </dl>
+              <a
+                class="text-link"
+                href="#work-renovation-detail"
+                data-dialog="work-renovation"
+                aria-label="受け継ぐ住まい、新しい日々。の詳細を見る"
+                >詳しく見る<img
+                  src="assets/arrow-detail.svg"
+                  alt=""
+                  width="24"
+                  height="12"
+              /></a>
+            </article>
+          </div>
+          <div class="works-more">
+            <a class="solid-link" href="#works-list" data-dialog="works-list"
+              >一覧を見る</a
+            >
+          </div>
+        </section>
+
+        <section id="events" class="events" aria-label="見学会・相談会">
+          <article class="event-card event-main">
+            <div class="photo event-photo">
+              <img
+                src="assets/event-open-house.png"
+                alt="木の床と低いテーブルに、窓からやわらかな光が差し込む室内"
+                width="1100"
+                height="733"
+                loading="lazy"
+              />
+            </div>
+            <div class="event-copy">
+              <p class="event-label">完成見学会</p>
+              <h2>これからの暮らしを、<br />話すことから。</h2>
+              <dl class="event-meta">
+                <dt>開催日</dt>
+                <dd>○月○日（○）</dd>
+                <dt>開催場所</dt>
+                <dd>○○県○○市・完成住宅（仮）</dd>
+              </dl>
+              <p class="event-description">
+                木の手ざわり、光の入り方、部屋から部屋へのつながり。写真だけでは伝わらない心地よさを、実際の住まいで感じてみませんか。
+              </p>
+              <a
+                class="text-link"
+                href="#open-house-detail"
+                data-dialog="open-house"
+                >詳しく見る<img
+                  src="assets/arrow-detail.svg"
+                  alt=""
+                  width="24"
+                  height="12"
+              /></a>
+            </div>
+          </article>
+          <article class="event-card event-sub">
+            <div class="photo event-photo">
+              <img
+                src="assets/event-consultation.png"
+                alt="木のテーブルに広げられた住宅のスケッチと間取り図、筆記具"
+                width="1100"
+                height="733"
+                loading="lazy"
+              />
+            </div>
+            <div class="event-copy">
+              <p class="event-label">家づくり相談会</p>
+              <h2>これからの暮らしを、<br />話すことから。</h2>
+              <dl class="event-meta">
+                <dt>開催日</dt>
+                <dd>○月○日（○）</dd>
+                <dt>開催場所</dt>
+                <dd>○○県○○市・相談会場（仮）</dd>
+              </dl>
+              <p class="event-description">
+                土地や間取り、資金計画、リノベーションのこと。まだ漠然とした想いでも大丈夫。気になることから、一緒に考えていきます。
+              </p>
+              <a
+                class="text-link"
+                href="#consultation-detail"
+                data-dialog="consultation"
+                >詳しく見る<img
+                  src="assets/arrow-detail.svg"
+                  alt=""
+                  width="24"
+                  height="12"
+              /></a>
+            </div>
+          </article>
+        </section>
+
+        <section id="contact" class="contact" aria-labelledby="contact-heading">
+          <p class="eyebrow">CONTACT</p>
+          <h2 id="contact-heading">お問い合わせ</h2>
+          <p class="contact-intro">
+            設計・施工のご相談、お見積りに関することなど、<br />どうぞお気軽にお問い合わせください。
+          </p>
+          <p class="contact-phone"><span>TEL</span><span>000-000-0000</span></p>
+          <p class="contact-hours">電話受付時間：準備中</p>
+          <a
+            class="contact-link"
+            href="#contact-information"
+            data-dialog="contact"
+            ><img src="assets/mail.svg" alt="" width="22" height="18" /><span
+              >お問い合わせはこちら</span
+            ><img src="assets/arrow-detail.svg" alt="" width="24" height="12"
+          /></a>
+          <div class="drawing open-door" aria-hidden="true">
+            <img
+              src="assets/open-door.png"
+              alt=""
+              width="1448"
+              height="1086"
+              loading="lazy"
+            />
+          </div>
+        </section>
       </div>
-      <div class="drawing wood-shavings" aria-hidden="true"><img src="assets/wood-shavings.png" alt="" width="1672" height="941" loading="lazy"></div>
-    </section>
+    </main>
 
-    <div class="lower-content">
-      <section id="works" class="works" aria-labelledby="works-heading">
-        <div class="section-heading"><p class="eyebrow">OUR WORKS</p><h2 id="works-heading">施工事例</h2><p class="works-intro">それぞれの暮らしに、<br>それぞれの心地よさを。</p></div>
-        <div class="works-grid">
-          <article class="work-card" id="work-natural">
-            <a class="photo work-photo" href="#work-natural-detail" data-dialog="work-natural" aria-label="木のぬくもりと、暮らす。の詳細を見る"><img src="assets/work-natural.png" alt="自然光が差し込む、木の家具と落ち着いた色合いのリビング" width="900" height="1125" loading="lazy"></a>
-            <p class="work-meta"><span>○○県○○市</span><span>新築住宅</span></p><h3>木のぬくもりと、暮らす。</h3><p class="work-description">やわらかな光と自然素材に包まれる、心地よい住まい。</p><dl class="work-area"><dt>延床面積</dt><dd>○○.○㎡（○○.○坪）</dd></dl>
-            <a class="text-link" href="#work-natural-detail" data-dialog="work-natural" aria-label="木のぬくもりと、暮らす。の詳細を見る">詳しく見る<img src="assets/arrow-detail.svg" alt="" width="24" height="12"></a>
-          </article>
-          <article class="work-card" id="work-light">
-            <a class="photo work-photo" href="#work-light-detail" data-dialog="work-light" aria-label="窓の向こうに、季節を感じる。の詳細を見る"><img src="assets/work-light.png" alt="大きな窓からの光と緑を楽しむ、木を取り入れたリビング" width="900" height="600" loading="lazy"></a>
-            <p class="work-meta"><span>○○県○○市</span><span>リノベーション</span></p><h3>窓の向こうに、季節を感じる。</h3><p class="work-description">外の景色とつながりながら、ゆったりと時を重ねる空間。</p><dl class="work-area"><dt>延床面積</dt><dd>○○.○㎡（○○.○坪）</dd></dl>
-            <a class="text-link" href="#work-light-detail" data-dialog="work-light" aria-label="窓の向こうに、季節を感じる。の詳細を見る">詳しく見る<img src="assets/arrow-detail.svg" alt="" width="24" height="12"></a>
-          </article>
-          <article class="work-card" id="work-renovation">
-            <a class="photo work-photo" href="#work-renovation-detail" data-dialog="work-renovation" aria-label="受け継ぐ住まい、新しい日々。の詳細を見る"><img src="assets/work-renovation.png" alt="木の建具と窓からの光が印象的な、静かな和の住まい" width="900" height="600" loading="lazy"></a>
-            <p class="work-meta"><span>○○県○○市</span><span>リノベーション</span></p><h3>受け継ぐ住まい、新しい日々。</h3><p class="work-description">昔ながらの佇まいを大切に、これからの暮らしを紡ぐ。</p><dl class="work-area"><dt>延床面積</dt><dd>○○.○㎡（○○.○坪）</dd></dl>
-            <a class="text-link" href="#work-renovation-detail" data-dialog="work-renovation" aria-label="受け継ぐ住まい、新しい日々。の詳細を見る">詳しく見る<img src="assets/arrow-detail.svg" alt="" width="24" height="12"></a>
-          </article>
-        </div>
-        <div class="works-more"><a class="solid-link" href="#works-list" data-dialog="works-list">一覧を見る</a></div>
-      </section>
+    <footer class="footer">
+      <div class="footer-main">
+        <a
+          class="brand footer-brand"
+          href="#top"
+          aria-label="木和工務店 ページの先頭へ"
+          ><span class="brand-name">木 和 工 務 店</span
+          ><span class="brand-subtitle">KIWA KOMUTEN · SINCE 1985</span></a
+        >
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="#philosophy">コンセプト</a
+          ><a href="#story" data-dialog="story">木和工務店ストーリー</a
+          ><a href="#works">施工実績</a><a href="#craft">家づくりについて</a
+          ><a href="#about" data-dialog="about">木和工務店について</a
+          ><a href="#blog" data-dialog="blog">ブログ</a
+          ><a href="#recruit" data-dialog="recruit">採用情報</a
+          ><a href="#contact">お問い合わせ</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <small>© 2026 KIWA KOMUTEN</small
+        ><a href="#privacy" data-dialog="privacy">プライバシーポリシー</a>
+      </div>
+    </footer>
 
-      <section id="events" class="events" aria-label="見学会・相談会">
-        <article class="event-card event-main">
-          <div class="photo event-photo"><img src="assets/event-open-house.png" alt="木の床と低いテーブルに、窓からやわらかな光が差し込む室内" width="1100" height="733" loading="lazy"></div>
-          <div class="event-copy"><p class="event-label">完成見学会</p><h2>これからの暮らしを、<br>話すことから。</h2><dl class="event-meta"><dt>開催日</dt><dd>○月○日（○）</dd><dt>開催場所</dt><dd>○○県○○市・完成住宅（仮）</dd></dl><p class="event-description">木の手ざわり、光の入り方、部屋から部屋へのつながり。写真だけでは伝わらない心地よさを、実際の住まいで感じてみませんか。</p><a class="text-link" href="#open-house-detail" data-dialog="open-house">詳しく見る<img src="assets/arrow-detail.svg" alt="" width="24" height="12"></a></div>
-        </article>
-        <article class="event-card event-sub">
-          <div class="photo event-photo"><img src="assets/event-consultation.png" alt="木のテーブルに広げられた住宅のスケッチと間取り図、筆記具" width="1100" height="733" loading="lazy"></div>
-          <div class="event-copy"><p class="event-label">家づくり相談会</p><h2>これからの暮らしを、<br>話すことから。</h2><dl class="event-meta"><dt>開催日</dt><dd>○月○日（○）</dd><dt>開催場所</dt><dd>○○県○○市・相談会場（仮）</dd></dl><p class="event-description">土地や間取り、資金計画、リノベーションのこと。まだ漠然とした想いでも大丈夫。気になることから、一緒に考えていきます。</p><a class="text-link" href="#consultation-detail" data-dialog="consultation">詳しく見る<img src="assets/arrow-detail.svg" alt="" width="24" height="12"></a></div>
-        </article>
-      </section>
-
-      <section id="contact" class="contact" aria-labelledby="contact-heading">
-        <p class="eyebrow">CONTACT</p><h2 id="contact-heading">お問い合わせ</h2><p class="contact-intro">設計・施工のご相談、お見積りに関することなど、<br>どうぞお気軽にお問い合わせください。</p><p class="contact-phone"><span>TEL</span><span>000-000-0000</span></p><p class="contact-hours">電話受付時間：準備中</p>
-        <a class="contact-link" href="#contact-information" data-dialog="contact"><img src="assets/mail.svg" alt="" width="22" height="18"><span>お問い合わせはこちら</span><img src="assets/arrow-detail.svg" alt="" width="24" height="12"></a>
-        <div class="drawing open-door" aria-hidden="true"><img src="assets/open-door.png" alt="" width="1448" height="1086" loading="lazy"></div>
-      </section>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-main"><a class="brand footer-brand" href="#top" aria-label="木和工務店 ページの先頭へ"><span class="brand-name">木 和 工 務 店</span><span class="brand-subtitle">KIWA KOMUTEN · SINCE 1985</span></a><nav class="footer-nav" aria-label="フッターナビゲーション"><a href="#philosophy">コンセプト</a><a href="#story" data-dialog="story">木和工務店ストーリー</a><a href="#works">施工実績</a><a href="#craft">家づくりについて</a><a href="#about" data-dialog="about">木和工務店について</a><a href="#blog" data-dialog="blog">ブログ</a><a href="#recruit" data-dialog="recruit">採用情報</a><a href="#contact">お問い合わせ</a></nav></div>
-    <div class="footer-bottom"><small>© 2026 KIWA KOMUTEN</small><a href="#privacy" data-dialog="privacy">プライバシーポリシー</a></div>
-  </footer>
-
-  <dialog class="detail-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="閉じる">閉じる<span aria-hidden="true">×</span></button><div class="dialog-body"><p class="eyebrow" id="dialog-eyebrow"></p><h2 id="dialog-title"></h2><div id="dialog-content"></div></div></dialog>
-  <noscript><p class="noscript-note">詳細表示とスマートフォンのメニューを利用するにはJavaScriptを有効にしてください。</p></noscript>
-</body>
+    <dialog class="detail-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="閉じる">
+        閉じる<span aria-hidden="true">×</span>
+      </button>
+      <div class="dialog-body">
+        <p class="eyebrow" id="dialog-eyebrow"></p>
+        <h2 id="dialog-title"></h2>
+        <div id="dialog-content"></div>
+      </div>
+    </dialog>
+    <noscript
+      ><p class="noscript-note">
+        詳細表示とスマートフォンのメニューを利用するにはJavaScriptを有効にしてください。
+      </p></noscript
+    >
+  </body>
 </html>
