@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+.sites-runtime/
+.sites-checkout/
+docs/figma-reference.jsx
+docs/screenshots/
+docs/qa-results.json

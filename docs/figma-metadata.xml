@@ -1,0 +1,513 @@
+<frame id="1:7" name="木和工務店｜トップページ" x="956" y="-663" width="1280" height="6208">
+  <frame id="1:10" name="ページ本体｜メイン・フッター" x="0" y="0" width="1280" height="6208">
+    <frame id="1:387" name="メインエリア｜左ナビ余白" x="0" y="0" width="1280.0093994140625" height="5917">
+      <frame id="1:11" name="メインコンテンツ" x="294.3999938964844" y="0" width="985.609375" height="5102.890625">
+        <frame id="1:12" name="01｜ブランドビジュアル" x="0" y="0" width="985.609375" height="320">
+          <text id="14:715" name="木のぬくもりを。" x="381.5999755859375" y="25" width="26" height="184" />
+          <text id="14:727" name="暮らしの真ん中に。" x="349.5999755859375" y="47" width="26" height="207" />
+          <rounded-rectangle id="66:758" name="家へ向かう家族と現代住宅 1" x="434.5999755859375" y="1" width="652" height="319" />
+        </frame>
+        <frame id="1:44" name="02｜メインビジュアル" x="0" y="320" width="985.609375" height="760">
+          <frame id="1:45" name="Image (木の階段と造作本棚に囲まれた、自然素材のぬくもりを感じる住まい)" x="0" y="0" width="985.609375" height="760" />
+          <frame id="1:47" name="キャッチコピー｜1行目（非表示）" x="-52.4000244140625" y="600" width="235" height="56" hidden="true">
+            <text id="1:48" name="安全に暮らす。" x="8" y="8" width="219" height="40" />
+          </frame>
+          <frame id="12:2" name="キャッチコピー｜2行目（非表示）" x="-52.4000244140625" y="528" width="270" height="56" hidden="true">
+            <text id="12:3" name="安心して住まう。" x="8" y="8" width="254" height="40" />
+          </frame>
+        </frame>
+        <frame id="1:52" name="03｜お知らせ" x="0" y="1080" width="650" height="254">
+          <frame id="1:53" name="お知らせ｜見出し" x="0" y="48" width="650" height="26">
+            <text id="1:55" name="お知らせ" x="0" y="0" width="61" height="26" />
+          </frame>
+          <frame id="1:78" name="お知らせ｜記事一覧" x="0" y="74" width="650" height="124">
+            <frame id="1:57" name="List" x="0" y="16" width="650" height="54">
+              <frame id="1:58" name="List Item" x="0" y="1" width="650" height="53">
+                <frame id="1:59" name="Button" x="0" y="0" width="650" height="52">
+                  <frame id="1:60" name="Text" x="0" y="14.5" width="62" height="17">
+                    <frame id="1:61" name="Time" x="0" y="0" width="62" height="17">
+                      <text id="1:62" name="2026.06.12" x="0" y="0" width="62" height="17" />
+                    </frame>
+                  </frame>
+                  <frame id="1:67" name="Text" x="86" y="12" width="338" height="22">
+                    <frame id="1:64" name="Text" x="0" y="3" width="47" height="16">
+                      <text id="1:65" name="見学会" x="8" y="0" width="31" height="16" />
+                    </frame>
+                    <text id="1:68" name="完成見学会「木のぬくもりと暮らす家」のご案内" x="63" y="-0.5" width="275" height="23" />
+                  </frame>
+                  <frame id="1:70" name="Icon" x="627" y="18.75" width="23" height="8.5" />
+                </frame>
+              </frame>
+            </frame>
+            <frame id="12:21" name="List" x="0" y="70" width="650" height="54">
+              <frame id="12:22" name="List Item" x="0" y="1" width="650" height="53">
+                <frame id="12:23" name="Button" x="0" y="0" width="650" height="52">
+                  <frame id="12:24" name="Text" x="0" y="14.5" width="62" height="17">
+                    <frame id="12:25" name="Time" x="0" y="0" width="62" height="17">
+                      <text id="12:26" name="2026.06.12" x="0" y="0" width="62" height="17" />
+                    </frame>
+                  </frame>
+                  <frame id="12:27" name="Text" x="86" y="12" width="338" height="22">
+                    <frame id="12:28" name="Text" x="0" y="3" width="47" height="16">
+                      <text id="12:29" name="見学会" x="8" y="0" width="31" height="16" />
+                    </frame>
+                    <text id="12:30" name="完成見学会「木のぬくもりと暮らす家」のご案内" x="63" y="-0.5" width="275" height="23" />
+                  </frame>
+                  <frame id="12:31" name="Icon" x="627" y="18.75" width="23" height="8.5" />
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+          <frame id="1:79" name="お知らせ｜一覧リンク配置" x="0" y="198" width="100" height="56">
+            <frame id="1:72" name="Button" x="0" y="12" width="100" height="44">
+              <frame id="1:73" name="Text" x="0" y="12.5" width="59" height="18">
+                <text id="1:74" name="一覧を見る" x="0" y="0" width="59" height="18" />
+              </frame>
+              <frame id="1:76" name="Icon" x="75" y="15.5" width="24" height="12" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:80" name="04｜私たちの家づくり" x="0" y="1334" width="985.609375" height="859">
+          <frame id="1:81" name="家づくり｜写真と紹介" x="0.000244140625" y="120" width="985.60888671875" height="739">
+            <frame id="1:82" name="家づくり｜メイン写真" x="0" y="0" width="428.28125" height="601.03125">
+              <frame id="1:83" name="Container" x="0" y="0" width="428.28125" height="571.03125">
+                <frame id="1:84" name="Image (木の食卓とソファ、本棚が並び、窓の緑が見える明るいリビング・ダイニング)" x="0" y="0" width="428.28125" height="571.03125" />
+              </frame>
+            </frame>
+            <frame id="1:89" name="家づくり｜サブ写真・本文" x="492.2808837890625" y="0" width="428.28125" height="802.921875">
+              <frame id="1:90" name="家づくり｜サブ写真" x="0" y="40" width="428.28125" height="285.515625">
+                <frame id="1:91" name="Container" x="0" y="0" width="428.28125" height="285.515625">
+                  <frame id="1:92" name="Image (大きな窓から緑を望む、木の食卓と椅子、花器が並ぶ明るいダイニング)" x="0" y="0" width="428.28125" height="285.515625" />
+                </frame>
+              </frame>
+              <frame id="1:96" name="家づくり｜紹介文・詳細リンク" x="0" y="325.515625" width="428.28125" height="392">
+                <frame id="1:97" name="Paragraph" x="0" y="36" width="428.28125" height="17">
+                  <text id="1:98" name="OUR PHILOSOPHY" x="0" y="0" width="130" height="17" />
+                </frame>
+                <frame id="1:100" name="Heading 2" x="0" y="53" width="428.28125" height="66">
+                  <text id="1:101" name="私たちの家づくり" x="0" y="10" width="267" height="56" />
+                </frame>
+                <frame id="1:103" name="家づくり｜本文" x="0" y="119" width="364" height="209">
+                  <frame id="1:104" name="Paragraph" x="0" y="20" width="364" height="68">
+                    <text id="1:105" name="住まいに求める心地よさは、 家族の数だけ、暮らしの数だけ。" x="0" y="0" width="364" height="68" />
+                  </frame>
+                  <frame id="1:107" name="Paragraph" x="0" y="88" width="364" height="121">
+                    <text id="1:108" name="木のぬくもりや、やわらかな光。 毎日の何気ない時間を大切にしながら、永く、安心して暮らせる住まいを一" x="0" y="20" width="364" height="101" />
+                  </frame>
+                </frame>
+                <frame id="1:118" name="家づくり｜詳細リンク配置" x="0" y="328" width="117" height="64">
+                  <frame id="1:110" name="Button - 私たちの家づくりについて詳しく見る" x="0" y="20" width="117" height="44">
+                    <frame id="1:111" name="Text" x="0" y="11.5" width="64" height="20">
+                      <text id="1:112" name="詳しく見る" x="0" y="0" width="64" height="20" />
+                    </frame>
+                    <frame id="1:114" name="Icon" x="92" y="15.5" width="24" height="12" />
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+          <rounded-rectangle id="81:774" name="繊細な植物の枝イラスト 1" x="800.5999755859375" y="522" width="185" height="59" />
+        </frame>
+        <frame id="14:666" name="05｜家づくりのこだわり" x="0" y="2193" width="986" height="984">
+          <frame id="14:607" name="こだわり｜コンテンツ" x="0.1953125" y="15.7578125" width="985.609375" height="952.484375">
+            <frame id="14:608" name="こだわり｜文章・写真レイアウト" x="0" y="100" width="920.5625" height="732.4840087890625">
+              <frame id="14:609" name="こだわり｜見出し・特徴・リンク" x="0" y="0" width="394.09375" height="732.484375">
+                <frame id="14:610" name="こだわり｜見出し・導入文" x="0" y="32" width="394.09375" height="175">
+                  <frame id="14:611" name="Paragraph" x="0" y="0" width="394.09375" height="17">
+                    <text id="14:612" name="OUR CRAFT" x="0" y="0" width="82" height="17" />
+                  </frame>
+                  <frame id="14:614" name="Heading 2" x="0" y="17" width="394.09375" height="66">
+                    <text id="14:615" name="家づくりのこだわり" x="0" y="10" width="301" height="56" />
+                  </frame>
+                  <frame id="14:617" name="Paragraph" x="0" y="83" width="394.09375" height="92">
+                    <text id="14:618" name="永く、心地よく暮らすために。 素材と設計、そして手仕事を大切にしています。" x="0" y="24" width="328" height="68" />
+                  </frame>
+                </frame>
+                <frame id="14:622" name="こだわり｜3つの特徴" x="0" y="207" width="394.09375" height="463.515625">
+                  <frame id="14:623" name="特徴｜01" x="0" y="36" width="394.09375" height="142.171875">
+                    <frame id="14:624" name="Container" x="0" y="1" width="394.09375" height="141.171875">
+                      <text id="14:626" name="01" x="-0.4000244140625" y="29" width="22" height="20" />
+                      <frame id="14:628" name="Container" x="37.578125" y="24" width="187.5" height="94">
+                        <frame id="14:629" name="Heading 3" x="0" y="0" width="187.5" height="33">
+                          <text id="14:630" name="素材を選ぶ" x="0" y="0" width="98" height="33" />
+                        </frame>
+                        <frame id="14:632" name="Paragraph" x="0" y="33" width="187.5" height="61">
+                          <text id="14:633" name="手で触れ、表情を確かめる。 時とともに愛着が深まる素材を。" x="0" y="8" width="188" height="53" />
+                        </frame>
+                      </frame>
+                    </frame>
+                  </frame>
+                  <frame id="14:636" name="特徴｜02" x="0" y="178.171875" width="394.09375" height="142.171875">
+                    <frame id="14:637" name="Container" x="0" y="1" width="394.09375" height="141.171875">
+                      <text id="14:639" name="02" x="0" y="30" width="25" height="20" />
+                      <frame id="14:640" name="Container" x="39.25" y="24" width="187.5" height="94">
+                        <frame id="14:641" name="Heading 3" x="0" y="0" width="187.5" height="33">
+                          <text id="14:642" name="光と風を生かす" x="0" y="0" width="138" height="33" />
+                        </frame>
+                        <frame id="14:643" name="Paragraph" x="0" y="33" width="187.5" height="61">
+                          <text id="14:644" name="季節の移ろいを感じながら、 自然と心地よくつながる設計を。" x="0" y="8" width="188" height="53" />
+                        </frame>
+                      </frame>
+                    </frame>
+                  </frame>
+                  <frame id="14:646" name="特徴｜03" x="0" y="320.34375" width="394.09375" height="143.171875">
+                    <frame id="14:647" name="Container" x="0" y="1" width="394.09375" height="141.171875">
+                      <text id="14:649" name="03" x="0" y="29" width="25" height="20" />
+                      <frame id="14:650" name="Container" x="39.15625" y="24" width="200" height="94">
+                        <frame id="14:651" name="Heading 3" x="0" y="0" width="200" height="33">
+                          <text id="14:652" name="丁寧につくる" x="0" y="0" width="118" height="33" />
+                        </frame>
+                        <frame id="14:653" name="Paragraph" x="0" y="33" width="200" height="61">
+                          <text id="14:654" name="見えないところにも、手をかける。 日々の安心につながる仕事を。" x="0" y="8" width="200" height="53" />
+                        </frame>
+                      </frame>
+                    </frame>
+                  </frame>
+                </frame>
+                <frame id="14:663" name="こだわり｜詳細リンク配置" x="0" y="670.515625" width="182" height="76">
+                  <frame id="14:656" name="CraftDetailLink" x="0" y="32" width="182" height="44">
+                    <frame id="14:657" name="Text" x="0" y="11.5" width="129" height="20">
+                      <text id="14:658" name="こだわりを詳しく見る" x="0" y="0" width="129" height="20" />
+                    </frame>
+                    <frame id="14:660" name="Icon" x="157" y="15.5" width="24" height="12" />
+                  </frame>
+                </frame>
+              </frame>
+              <frame id="14:664" name="こだわり｜工房写真" x="438.89404296875" y="0" width="481.671875" height="602.078125">
+                <frame id="14:665" name="Image (緑を望む窓からやわらかな光が差し込み、木の道具が並ぶ静かな工房)" x="0" y="0" width="481.671875" height="602.078125" />
+              </frame>
+            </frame>
+          </frame>
+          <rounded-rectangle id="80:768" name="繊細な木の削りくずカール 1" x="578.5999755859375" y="630" width="320" height="212" />
+        </frame>
+        <frame id="1:232" name="下部エリア｜施工事例・見学相談・お問い合わせ" x="0" y="3177" width="985.609375" height="3140">
+          <frame id="1:233" name="背景｜下部エリア" x="-294.4000244140625" y="0" width="1280" height="2483" />
+          <frame id="1:311" name="08｜お問い合わせ" x="0" y="2157" width="985.609375" height="528">
+            <text id="1:314" name="CONTACT" x="64" y="72" width="67" height="17" />
+            <text id="1:316" name="お問い合わせ" x="64" y="99" width="215" height="50" />
+            <text id="1:318" name="設計・施工のご相談、お見積りに関することなど、 どうぞお気軽にお問い合わせください。" x="64" y="171" width="344" height="65" />
+            <frame id="1:321" name="お問い合わせ｜電話番号" x="64" y="258" width="288.296875" height="46.078125">
+              <text id="1:323" name="TEL" x="0" y="13" width="36" height="27" />
+              <text id="1:326" name="000-000-0000" x="52.765625" y="0" width="234" height="47" />
+            </frame>
+            <text id="1:334" name="電話受付時間：準備中" x="64" y="320.078125" width="129" height="24" />
+            <frame id="1:336" name="お問い合わせ｜ボタン" x="64" y="372.078125" width="480" height="84">
+              <frame id="1:337" name="Icon" x="103.5" y="33" width="22" height="18" />
+              <frame id="1:340" name="Text" x="149.5" y="28" width="179" height="28">
+                <text id="1:341" name="お問い合わせはこちら" x="0" y="0" width="179" height="28" />
+              </frame>
+              <frame id="1:343" name="Icon" x="352.5" y="36" width="24" height="12" />
+            </frame>
+            <rounded-rectangle id="81:780" name="透明背景のアイボリー線画の開いた扉 1" x="684.5999755859375" y="257" width="280" height="272" />
+          </frame>
+          <frame id="12:48" name="07｜見学会・相談会" x="-0.4000244140625" y="1239" width="986" height="918.328125">
+            <frame id="84:856" name="イベント｜レイアウト枠" x="0" y="0" width="950" height="798.328125">
+              <frame id="84:793" name="イベント｜メイン・サブ配置" x="0" y="0" width="950" height="798.328125">
+                <frame id="84:794" name="完成見学会｜メインカード" x="0" y="0" width="518" height="798.328125">
+                  <frame id="84:795" name="完成見学会｜写真枠" x="0" y="0" width="518" height="395.328125">
+                    <frame id="84:796" name="Image (木の床と低いテーブルに、窓からやわらかな光が差し込む室内)" x="0" y="0" width="518" height="395.328125" />
+                  </frame>
+                  <frame id="84:797" name="完成見学会｜案内情報" x="0" y="395.328125" width="518" height="403">
+                    <text id="84:799" name="完成見学会" x="0" y="28" width="73" height="24" />
+                    <frame id="84:823" name="完成見学会｜タイトル" x="0" y="52" width="284" height="109">
+                      <text id="84:802" name="これからの暮らしを、 話すことから。" x="0" y="12" width="284" height="97" />
+                    </frame>
+                    <frame id="84:824" name="完成見学会｜開催情報配置" x="0" y="161" width="479.109375" height="74">
+                      <frame id="84:804" name="完成見学会｜開催日・場所" x="0" y="18" width="479.109375" height="56">
+                        <frame id="84:805" name="Definition Term" x="0" y="0" width="62" height="24">
+                          <text id="84:806" name="開催日" x="12.5" y="0" width="37" height="24" />
+                        </frame>
+                        <frame id="84:808" name="Definition Description" x="77.99981689453125" y="0" width="409.109375" height="24">
+                          <text id="84:809" name="○月○日（○）" x="0" y="0" width="87" height="24" />
+                        </frame>
+                        <frame id="84:810" name="Definition Term" x="0" y="32" width="62" height="24">
+                          <text id="84:811" name="開催場所" x="6" y="0" width="50" height="24" />
+                        </frame>
+                        <frame id="84:812" name="Definition Description" x="77.99981689453125" y="32" width="409.109375" height="24">
+                          <text id="84:813" name="○○県○○市・完成住宅（仮）" x="0" y="0" width="175" height="24" />
+                        </frame>
+                      </frame>
+                    </frame>
+                    <frame id="84:825" name="完成見学会｜説明文" x="0" y="235" width="403" height="124">
+                      <text id="84:815" name="木の手ざわり、光の入り方、部屋から部屋へのつながり。写真だけでは伝わらない心地よさを、実際の住まいで" x="0" y="18" width="403" height="86" />
+                    </frame>
+                    <frame id="84:817" name="完成見学会｜詳細リンク" x="0" y="359" width="117" height="44">
+                      <frame id="84:818" name="Text" x="0" y="11.5" width="64" height="20">
+                        <text id="84:819" name="詳しく見る" x="0" y="0" width="64" height="20" />
+                      </frame>
+                      <frame id="84:821" name="Icon" x="92" y="15.5" width="24" height="12" />
+                    </frame>
+                  </frame>
+                </frame>
+                <frame id="84:855" name="家づくり相談会｜段差・余白" x="566" y="0" width="356" height="624">
+                  <frame id="84:826" name="家づくり相談会｜サブカード" x="0" y="32" width="356" height="592">
+                    <frame id="84:827" name="家づくり相談会｜写真枠" x="0" y="0" width="356" height="267">
+                      <frame id="84:828" name="Image (木のテーブルに広げられた住宅のスケッチと間取り図、筆記具)" x="0" y="0" width="356" height="267" />
+                    </frame>
+                    <frame id="84:829" name="家づくり相談会｜案内情報" x="0" y="267" width="356" height="386.359375">
+                      <text id="84:831" name="家づくり相談会" x="0" y="24" width="86" height="20" />
+                      <frame id="84:852" name="家づくり相談会｜タイトル" x="0" y="44" width="188" height="77">
+                        <text id="84:834" name="これからの暮らしを、 話すことから。" x="0" y="12" width="188" height="65" />
+                      </frame>
+                      <frame id="84:853" name="家づくり相談会｜開催情報配置" x="0" y="121" width="329.453125" height="74">
+                        <frame id="84:836" name="家づくり相談会｜開催日・場所" x="0" y="18" width="329.453125" height="56">
+                          <frame id="84:837" name="Definition Term" x="0" y="0" width="62" height="24">
+                            <text id="84:838" name="開催日" x="12.5" y="0" width="37" height="24" />
+                          </frame>
+                          <frame id="84:839" name="Definition Description" x="78" y="0" width="175" height="24">
+                            <text id="84:840" name="○月○日（○）" x="0" y="0" width="87" height="24" />
+                          </frame>
+                          <frame id="84:841" name="Definition Term" x="0" y="32" width="62" height="24">
+                            <text id="84:842" name="開催場所" x="6" y="0" width="50" height="24" />
+                          </frame>
+                          <frame id="84:843" name="Definition Description" x="78" y="32" width="175" height="24">
+                            <text id="84:844" name="○○県○○市・相談会場（仮）" x="0" y="0" width="175" height="24" />
+                          </frame>
+                        </frame>
+                      </frame>
+                      <frame id="84:854" name="家づくり相談会｜説明文" x="0" y="195" width="330" height="124">
+                        <text id="84:846" name="土地や間取り、資金計画、リノベーションのこと。まだ漠然とした想いでも大丈夫。気になることから、一緒に" x="0" y="18" width="330" height="86" />
+                      </frame>
+                      <frame id="84:847" name="家づくり相談会｜詳細リンク" x="0" y="319" width="117" height="44">
+                        <frame id="84:848" name="Text" x="0" y="11.5" width="64" height="20">
+                          <text id="84:849" name="詳しく見る" x="0" y="0" width="64" height="20" />
+                        </frame>
+                        <frame id="84:850" name="Icon" x="92" y="15.5" width="24" height="12" />
+                      </frame>
+                    </frame>
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+          <frame id="1:120" name="06｜施工事例" x="-0.4000244140625" y="0" width="985.609375" height="1239">
+            <frame id="1:121" name="施工事例｜見出し・導入文" x="0" y="100" width="920.5625" height="170">
+              <frame id="1:122" name="施工事例｜見出し" x="0" y="0" width="146.890625" height="77">
+                <frame id="1:123" name="Paragraph" x="0" y="0" width="146.890625" height="17">
+                  <text id="1:124" name="OUR WORKS" x="0" y="0" width="87" height="17" />
+                </frame>
+                <frame id="1:125" name="Heading 2" x="0" y="17" width="146.890625" height="60">
+                  <text id="1:126" name="施工事例" x="0" y="10" width="141" height="50" />
+                </frame>
+              </frame>
+              <text id="1:130" name="それぞれの暮らしに、 それぞれの心地よさを。" x="0" y="101" width="180" height="69" />
+            </frame>
+            <frame id="1:229" name="施工事例｜カード一覧配置" x="0" y="270" width="986" height="757">
+              <frame id="1:132" name="施工事例｜3件のカード" x="0" y="64" width="986" height="723.968994140625">
+                <frame id="1:133" name="事例｜木のぬくもりと、暮らす。" x="0" y="0" width="286.84375" height="619.453125">
+                  <frame id="1:134" name="Container" x="0" y="0" width="286.84375" height="382.453125">
+                    <frame id="1:135" name="Image (自然光が差し込む、木の家具と落ち着いた色合いのリビング)" x="0" y="0" width="286.84375" height="382.453125" />
+                  </frame>
+                  <frame id="1:136" name="Container" x="0" y="382.453125" width="286.84375" height="40">
+                    <frame id="1:137" name="Text" x="0" y="22" width="71" height="18">
+                      <text id="1:138" name="○○県○○市" x="0" y="0" width="71" height="18" />
+                    </frame>
+                    <frame id="1:140" name="Text" x="81" y="22" width="58" height="18">
+                      <text id="1:141" name="新築住宅" x="11" y="0" width="47" height="18" />
+                    </frame>
+                  </frame>
+                  <frame id="1:142" name="Heading 3" x="0" y="422.453125" width="286.84375" height="36">
+                    <text id="1:143" name="木のぬくもりと、暮らす。" x="0" y="4" width="205" height="32" />
+                  </frame>
+                  <frame id="1:145" name="Paragraph" x="0" y="458.453125" width="286.84375" height="63">
+                    <text id="1:146" name="やわらかな光と自然素材に包まれる、心地よい住まい。" x="0" y="10" width="287" height="53" />
+                  </frame>
+                  <frame id="1:148" name="Definition List" x="0" y="521.453125" width="286.84375" height="38">
+                    <frame id="1:149" name="Definition Term" x="0" y="16" width="46" height="22">
+                      <text id="1:150" name="延床面積" x="0" y="0" width="46" height="22" />
+                    </frame>
+                    <frame id="1:152" name="Definition Description" x="58" y="16" width="123" height="22">
+                      <text id="1:153" name="○○.○㎡（○○.○坪）" x="0" y="0" width="123" height="22" />
+                    </frame>
+                  </frame>
+                  <frame id="1:163" name="Button - 木のぬくもりと、暮らす。の詳細を見る:margin" x="0" y="559.453125" width="117" height="60">
+                    <frame id="1:154" name="Button - 木のぬくもりと、暮らす。の詳細を見る" x="0" y="16" width="117" height="44">
+                      <frame id="1:155" name="Text" x="0" y="11.5" width="64" height="20">
+                        <text id="1:156" name="詳しく見る" x="0" y="0" width="64" height="20" />
+                      </frame>
+                      <frame id="1:157" name="Icon" x="92" y="15.5" width="24" height="12" />
+                    </frame>
+                  </frame>
+                </frame>
+                <frame id="1:218" name="事例02｜段差・余白" x="316.84381103515625" y="0" width="286.859375" height="659.984375">
+                  <frame id="1:164" name="事例｜窓の向こうに、季節を感じる。" x="0" y="32" width="286.859375" height="627.984375">
+                    <frame id="1:165" name="Container" x="0" y="0" width="286.859375" height="382.46875">
+                      <frame id="1:166" name="Image (大きな窓からの光と緑を楽しむ、木を取り入れたリビング)" x="0" y="0" width="286.859375" height="382.46875" />
+                    </frame>
+                    <frame id="1:167" name="Container" x="0" y="382.46875" width="286.859375" height="40">
+                      <frame id="1:168" name="Text" x="0" y="22" width="71" height="18">
+                        <text id="1:169" name="○○県○○市" x="0" y="0" width="71" height="18" />
+                      </frame>
+                      <frame id="1:170" name="Text" x="81" y="22" width="93" height="18">
+                        <text id="1:171" name="リノベーション" x="11" y="0" width="82" height="18" />
+                      </frame>
+                    </frame>
+                    <frame id="1:172" name="Heading 3" x="0" y="422.46875" width="286.859375" height="40">
+                      <text id="1:173" name="窓の向こうに、季節を感じる。" x="0" y="8" width="240" height="32" />
+                    </frame>
+                    <frame id="1:174" name="Paragraph" x="0" y="462.46875" width="286.859375" height="63">
+                      <text id="1:175" name="外の景色とつながりながら、ゆったりと時を重ねる空間。" x="0" y="10" width="287" height="53" />
+                    </frame>
+                    <frame id="1:176" name="Definition List" x="0" y="525.46875" width="286.859375" height="38">
+                      <frame id="1:177" name="Definition Term" x="0" y="16" width="46" height="22">
+                        <text id="1:178" name="延床面積" x="0" y="0" width="46" height="22" />
+                      </frame>
+                      <frame id="1:179" name="Definition Description" x="58" y="16" width="123" height="22">
+                        <text id="1:180" name="○○.○㎡（○○.○坪）" x="0" y="0" width="123" height="22" />
+                      </frame>
+                    </frame>
+                    <frame id="1:190" name="Button - 窓の向こうに、季節を感じる。の詳細を見る:margin" x="0" y="563.46875" width="117" height="60">
+                      <frame id="1:181" name="Button - 窓の向こうに、季節を感じる。の詳細を見る" x="0" y="16" width="117" height="44">
+                        <frame id="1:182" name="Text" x="0" y="11.5" width="64" height="20">
+                          <text id="1:183" name="詳しく見る" x="0" y="0" width="64" height="20" />
+                        </frame>
+                        <frame id="1:184" name="Icon" x="92" y="15.5" width="24" height="12" />
+                      </frame>
+                    </frame>
+                  </frame>
+                </frame>
+                <frame id="1:219" name="事例03｜段差・余白" x="633.703125" y="0" width="286.84375" height="691.96875">
+                  <frame id="1:191" name="事例｜受け継ぐ住まい、新しい日々。" x="0" y="64" width="286.84375" height="627.96875">
+                    <frame id="1:192" name="Container" x="0" y="0" width="286.84375" height="382.453125">
+                      <frame id="1:193" name="Image (木の建具と窓からの光が印象的な、静かな和の住まい)" x="0" y="0" width="286.84375" height="382.453125" />
+                    </frame>
+                    <frame id="1:194" name="Container" x="0" y="382.453125" width="286.84375" height="40">
+                      <frame id="1:195" name="Text" x="0" y="22" width="71" height="18">
+                        <text id="1:196" name="○○県○○市" x="0" y="0" width="71" height="18" />
+                      </frame>
+                      <frame id="1:197" name="Text" x="81" y="22" width="93" height="18">
+                        <text id="1:198" name="リノベーション" x="11" y="0" width="82" height="18" />
+                      </frame>
+                    </frame>
+                    <frame id="1:199" name="Heading 3" x="0" y="422.453125" width="286.84375" height="40">
+                      <text id="1:200" name="受け継ぐ住まい、新しい日々。" x="0" y="8" width="240" height="32" />
+                    </frame>
+                    <frame id="1:201" name="Paragraph" x="0" y="462.453125" width="286.84375" height="63">
+                      <text id="1:202" name="昔ながらの佇まいを大切に、これからの暮らしを紡ぐ。" x="0" y="10" width="287" height="53" />
+                    </frame>
+                    <frame id="1:203" name="Definition List" x="0" y="525.453125" width="286.84375" height="38">
+                      <frame id="1:204" name="Definition Term" x="0" y="16" width="46" height="22">
+                        <text id="1:205" name="延床面積" x="0" y="0" width="46" height="22" />
+                      </frame>
+                      <frame id="1:206" name="Definition Description" x="58" y="16" width="123" height="22">
+                        <text id="1:207" name="○○.○㎡（○○.○坪）" x="0" y="0" width="123" height="22" />
+                      </frame>
+                    </frame>
+                    <frame id="1:217" name="Button - 受け継ぐ住まい、新しい日々。の詳細を見る:margin" x="0" y="563.453125" width="117" height="60">
+                      <frame id="1:208" name="Button - 受け継ぐ住まい、新しい日々。の詳細を見る" x="0" y="16" width="117" height="44">
+                        <frame id="1:209" name="Text" x="0" y="11.5" width="64" height="20">
+                          <text id="1:210" name="詳しく見る" x="0" y="0" width="64" height="20" />
+                        </frame>
+                        <frame id="1:211" name="Icon" x="92" y="15.5" width="24" height="12" />
+                      </frame>
+                    </frame>
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+            <frame id="1:224" name="施工事例｜一覧リンク配置" x="0" y="1027" width="986" height="92">
+              <frame id="1:225" name="Button" x="363" y="40" width="260" height="52">
+                <text id="1:226" name="一覧を見る" x="95.5" y="14" width="69" height="24" />
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="1:388" name="フッター｜外側余白" x="0" y="5917" width="1280.4000244140625" height="291">
+      <frame id="1:345" name="09｜フッター" x="294.3999938964844" y="0" width="986" height="286">
+        <frame id="1:347" name="フッター｜ブランド・ナビゲーション" x="0" y="0" width="986" height="241">
+          <frame id="1:348" name="Link - 木和工務店 ページの先頭へ" x="0" y="86" width="339.796875" height="70">
+            <text id="1:350" name="木 和 工 務 店" x="0" y="0" width="161" height="44" />
+            <text id="1:353" name="KIWA KOMUTEN · SINCE 1985" x="0" y="52" width="162" height="18" />
+          </frame>
+          <frame id="1:355" name="Navigation - フッターナビゲーション" x="510.296875" y="33" width="475.703125" height="176">
+            <frame id="1:356" name="Button" x="0" y="0" width="62.5" height="44">
+              <text id="1:357" name="コンセプト" x="0" y="11" width="62" height="22" />
+            </frame>
+            <frame id="1:359" name="Button" x="249.843994140625" y="0" width="125" height="44">
+              <text id="1:360" name="木和工務店ストーリー" x="0" y="11" width="125" height="22" />
+            </frame>
+            <frame id="1:361" name="Button" x="0" y="44" width="50" height="44">
+              <text id="1:362" name="施工実績" x="0" y="11" width="50" height="22" />
+            </frame>
+            <frame id="1:363" name="Button" x="249.843994140625" y="44" width="99.765625" height="44">
+              <text id="1:364" name="家づくりについて" x="0" y="11" width="100" height="22" />
+            </frame>
+            <frame id="1:365" name="Button" x="0" y="88" width="112.265625" height="44">
+              <text id="1:366" name="木和工務店について" x="0" y="11" width="112" height="22" />
+            </frame>
+            <frame id="1:367" name="Button" x="249.843994140625" y="88" width="37.5" height="44">
+              <text id="1:368" name="ブログ" x="0" y="11" width="37" height="22" />
+            </frame>
+            <frame id="1:369" name="Button" x="0" y="132" width="50" height="44">
+              <text id="1:370" name="採用情報" x="0" y="11" width="50" height="22" />
+            </frame>
+            <frame id="1:371" name="Button" x="249.843994140625" y="132" width="75" height="44">
+              <text id="1:372" name="お問い合わせ" x="0" y="11" width="75" height="22" />
+            </frame>
+          </frame>
+        </frame>
+        <frame id="1:386" name="フッター｜下段余白" x="0" y="241" width="986" height="45">
+          <frame id="1:373" name="フッター｜著作権・ポリシー" x="0" y="0" width="986" height="45">
+            <frame id="1:377" name="Small" x="0" y="14" width="133" height="18">
+              <text id="1:378" name="© 2026 KIWA KOMUTEN" x="0" y="0" width="133" height="18" />
+            </frame>
+            <frame id="1:374" name="Button" x="881" y="1" width="105" height="44">
+              <text id="1:375" name="プライバシーポリシー" x="-8" y="13" width="105" height="18" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+  <frame id="1:389" name="サイドバー｜ブランド・ナビゲーション" x="0" y="0" width="294.390625" height="1080">
+    <frame id="1:390" name="ブランドロゴ｜トップへ" x="51.82809829711914" y="39" width="190" height="58.5">
+      <frame id="1:394" name="Text" x="0" y="0" width="190" height="41">
+        <text id="1:395" name="木 和 工 務 店" x="0" y="5" width="161" height="36" />
+      </frame>
+      <frame id="1:397" name="Text" x="0" y="41" width="190" height="17.5">
+        <text id="1:398" name="KIWA KOMUTEN · SINCE 1985" x="0" y="3.75" width="142" height="14" />
+      </frame>
+    </frame>
+    <frame id="1:402" name="メインナビゲーション" x="51.82809829711914" y="97.5" width="165" height="406">
+      <frame id="1:403" name="Button" x="0" y="40" width="82" height="44">
+        <text id="1:404" name="コンセプト" x="0" y="9" width="82" height="26" />
+      </frame>
+      <frame id="1:406" name="Button" x="0" y="86" width="165" height="44">
+        <text id="1:407" name="木和工務店ストーリー" x="0" y="9" width="165" height="26" />
+      </frame>
+      <frame id="1:408" name="Button" x="0" y="132" width="66" height="44">
+        <text id="1:409" name="施工実績" x="0" y="9" width="66" height="26" />
+      </frame>
+      <frame id="1:410" name="Button" x="0" y="178" width="132" height="44">
+        <text id="1:411" name="家づくりについて" x="0" y="9" width="132" height="26" />
+      </frame>
+      <frame id="1:412" name="Button" x="0" y="224" width="148" height="44">
+        <text id="1:413" name="木和工務店について" x="0" y="9" width="148" height="26" />
+      </frame>
+      <frame id="1:414" name="Button" x="0" y="270" width="49" height="44">
+        <text id="1:415" name="ブログ" x="0" y="9" width="49" height="26" />
+      </frame>
+      <frame id="1:416" name="Button" x="0" y="316" width="66" height="44">
+        <text id="1:417" name="採用情報" x="0" y="9" width="66" height="26" />
+      </frame>
+      <frame id="1:418" name="Button" x="0" y="362" width="99" height="44">
+        <text id="1:419" name="お問い合わせ" x="0" y="9" width="99" height="26" />
+      </frame>
+    </frame>
+    <frame id="1:429" name="SNS｜配置枠（非表示）" x="51.82809829711914" y="503.5" width="70" height="536.5" hidden="true">
+      <frame id="1:420" name="SNSリンク一覧" x="0" y="372.5" width="70" height="164">
+        <frame id="1:421" name="Button" x="0" y="32" width="70" height="44">
+          <text id="1:422" name="Twitter" x="0" y="10.5" width="50" height="23" />
+        </frame>
+        <frame id="1:424" name="Button" x="0" y="76" width="70" height="44">
+          <text id="1:425" name="Facebook" x="0" y="10.5" width="64" height="23" />
+        </frame>
+        <frame id="1:426" name="Button" x="0" y="120" width="70" height="44">
+          <text id="1:427" name="Instagram" x="0" y="10.5" width="70" height="23" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+</frame>

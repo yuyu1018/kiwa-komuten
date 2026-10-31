@@ -1,0 +1,17 @@
+{
+  "name": "kiwa-komuten",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "木和工務店トップページ — HTML / CSS / JavaScript",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "node --check dist/app.js && node --check scripts/serve.mjs",
+    "qa": "node scripts/qa.mjs",
+    "compare": "node scripts/compare.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}

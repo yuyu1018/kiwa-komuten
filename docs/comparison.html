@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>木和工務店｜Figmaと実装の比較</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #e7e4de; color: #33332e; font: 14px/1.6 system-ui, sans-serif; }
+  header { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 12px 24px; background: #fcfbf7; border-bottom: 1px solid #d5d0c6; }
+  h1 { font-size: 16px; margin: 0; }
+  label { display: flex; align-items: center; gap: 12px; }
+  input { width: min(240px, 40vw); accent-color: #756552; }
+  button { padding: 8px 16px; border: 1px solid #aaa395; background: transparent; color: inherit; cursor: pointer; }
+  main { position: relative; width: min(1280px, 100%); margin: auto; --reveal: 50%; }
+  img { display: block; width: 100%; height: auto; }
+  .implementation { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--reveal)) 0 0); }
+  main::after { content: ''; position: absolute; top: 0; bottom: 0; left: var(--reveal); width: 1px; background: #aa542d; pointer-events: none; }
+  main.show-difference::after { display: none; }
+  .difference { display: none; position: absolute; inset: 0; }
+  main.show-difference .difference { display: block; }
+</style>
+<header><h1>Figmaと実装の比較</h1><label><span>Figma</span><input id="reveal" type="range" min="0" max="100" value="50" aria-label="実装の表示割合"><span>実装</span></label><button id="difference-toggle" aria-pressed="false">差分を表示</button><span>基準幅1280px・全高6208px</span></header>
+<main><img src="screenshots/figma-desktop.png" alt="Figmaの元デザイン" width="1280" height="6208"><img class="implementation" src="screenshots/desktop-1280.png" alt="実装後のブラウザスクリーンショット" width="1280" height="6208"><img class="difference" src="screenshots/difference.png" alt="差分を赤色で示した比較画像" width="1280" height="6208"></main>
+<script>
+  const main = document.querySelector('main');
+  document.querySelector('#reveal').addEventListener('input', event => main.style.setProperty('--reveal', event.target.value + '%'));
+  document.querySelector('#difference-toggle').addEventListener('click', event => {
+    const visible = main.classList.toggle('show-difference');
+    event.currentTarget.setAttribute('aria-pressed', String(visible));
+    event.currentTarget.textContent = visible ? '重ね合わせに戻る' : '差分を表示';
+  });
+</script>
+</html>

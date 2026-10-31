@@ -1,0 +1,93 @@
+{
+  "hero-staircase.png": {
+    "nodeId": "1:45",
+    "x": 294.3999938964844,
+    "y": 320.0,
+    "width": 985.609375,
+    "height": 760.0
+  },
+  "philosophy-living.png": {
+    "nodeId": "1:84",
+    "x": 294.4002380371094,
+    "y": 1454.0,
+    "width": 428.28125,
+    "height": 571.03125
+  },
+  "philosophy-dining.png": {
+    "nodeId": "1:92",
+    "x": 786.6811218261719,
+    "y": 1494.0,
+    "width": 428.28125,
+    "height": 285.515625
+  },
+  "craft-workshop.png": {
+    "nodeId": "14:665",
+    "x": 733.4893493652344,
+    "y": 2308.7578125,
+    "width": 481.671875,
+    "height": 602.078125
+  },
+  "work-natural.png": {
+    "nodeId": "1:135",
+    "x": 293.9999694824219,
+    "y": 3511.0,
+    "width": 286.84375,
+    "height": 382.453125
+  },
+  "work-light.png": {
+    "nodeId": "1:166",
+    "x": 610.8437805175781,
+    "y": 3543.0,
+    "width": 286.859375,
+    "height": 382.46875
+  },
+  "work-renovation.png": {
+    "nodeId": "1:193",
+    "x": 927.7030944824219,
+    "y": 3575.0,
+    "width": 286.84375,
+    "height": 382.453125
+  },
+  "event-open-house.png": {
+    "nodeId": "84:796",
+    "x": 293.9999694824219,
+    "y": 4416.0,
+    "width": 518.0,
+    "height": 395.328125
+  },
+  "event-consultation.png": {
+    "nodeId": "84:828",
+    "x": 859.9999694824219,
+    "y": 4448.0,
+    "width": 356.0,
+    "height": 267.0
+  },
+  "house-family.png": {
+    "nodeId": "66:758",
+    "x": 729,
+    "y": 1,
+    "width": 652,
+    "height": 319
+  },
+  "botanical.png": {
+    "nodeId": "81:774",
+    "x": 1095,
+    "y": 1797,
+    "width": 185,
+    "height": 59
+  },
+  "wood-shavings.png": {
+    "nodeId": "80:768",
+    "x": 873,
+    "y": 2823,
+    "width": 320,
+    "height": 212
+  },
+  "open-door.png": {
+    "nodeId": "81:780",
+    "x": 979,
+    "y": 5591,
+    "width": 280,
+    "height": 272
+  }
+}
