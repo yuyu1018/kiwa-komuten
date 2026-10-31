@@ -16,7 +16,7 @@ const expectedAssets = JSON.parse(await readFile(root + 'docs/asset-geometry.jso
 assert(!(await readFile(root + 'dist/styles.css', 'utf8')).includes('--unit'), 'The viewport scaling unit has been removed');
 
 try {
-  for (const width of [1280, 1440, 1920, 2560, 1024, 901, 900, 768, 390, 375, 320]) {
+  for (const width of [1280, 1440, 1920, 2560, 1101, 1100, 1024, 901, 900, 768, 601, 600, 390, 375, 320]) {
     const context = await browser.newContext({ viewport: { width, height: 960 }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
     const page = await context.newPage();
     const errors = [];
@@ -27,19 +27,34 @@ try {
       document.querySelectorAll('img').forEach(image => { image.loading = 'eager'; });
       await document.fonts.ready;
       await Promise.all([...document.images].map(image => image.decode()));
+      await Promise.all([...document.querySelectorAll('svg.drawing image')].map(node => {
+        const image = new Image();
+        image.src = node.href.baseVal;
+        return image.decode();
+      }));
     });
     const geometry = await page.evaluate(() => ({
       width: innerWidth,
       scrollWidth: document.documentElement.scrollWidth,
       height: document.documentElement.scrollHeight,
       fontLoaded: document.fonts.check('16px "Noto Serif JP"'),
-      rightGaps: Object.fromEntries(['.brand-visual', '.hero-photo', '.contact', '.news', '.philosophy', '.craft', '.works', '.events', '.footer', '.philosophy-sub', '.craft-photo', '.work-card:last-child .work-photo', '.event-sub .event-photo'].map(selector => [selector, innerWidth - document.querySelector(selector).getBoundingClientRect().right])),
+      layout: {
+        gutter: parseFloat(getComputedStyle(document.querySelector('.philosophy')).marginRight),
+        inset: parseFloat(getComputedStyle(document.querySelector('.philosophy')).paddingRight)
+      },
+      rightGaps: Object.fromEntries(['.brand-visual', '.hero-photo', '.contact', '.news', '.philosophy', '.craft', '.works', '.events', '.footer', '.philosophy-sub', '.craft-photo', '.work-photo', '.event-sub .event-photo'].map(selector => [selector, innerWidth - (selector === '.work-photo' ? Math.max(...[...document.querySelectorAll(selector)].map(node => node.getBoundingClientRect().right)) : document.querySelector(selector).getBoundingClientRect().right)])),
       bodyFonts: Object.fromEntries(['body', '.philosophy-body', '.craft-intro', '.craft-list p', '.work-description', '.event-description', '.contact-intro', '.news-summary', '.text-link', '.contact-link', '.primary-nav a', '.footer-nav a', '#dialog-content'].map(selector => [selector, getComputedStyle(document.querySelector(selector)).fontSize])),
+      headings: [...document.querySelectorAll('h2:not(#news-heading)')].map(node => {
+        const style = getComputedStyle(node);
+        return { id: node.id, style: Object.fromEntries(['fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing', 'marginTop', 'marginBottom'].map(property => [property, style[property]])) };
+      }),
       overflowingText: [...document.querySelectorAll('main p, main h2, main h3, main dd, .footer-nav a, .primary-nav a, main .text-link, .contact-link')].filter(node => node.scrollWidth > node.clientWidth + 1).map(node => ({ text: node.textContent.trim(), className: node.className, width: node.clientWidth, scrollWidth: node.scrollWidth })),
-      assets: [...document.images].map(image => {
+      assets: [...document.images, ...document.querySelectorAll('svg.drawing image')].map(image => {
+        const drawing = image instanceof SVGImageElement;
         const box = image.getBoundingClientRect();
-        const parent = image.parentElement.getBoundingClientRect();
-        return { file: image.getAttribute('src'), loaded: image.complete && image.naturalWidth > 0, x: box.x, y: box.y, width: box.width, height: box.height, slot: { x: parent.x, y: parent.y, width: parent.width, height: parent.height }, fit: getComputedStyle(image).objectFit };
+        const parent = (drawing ? image.closest('svg') : image.parentElement).getBoundingClientRect();
+        // SVG sources have already passed Image.decode() above.
+        return { file: drawing ? image.href.baseVal : image.getAttribute('src'), loaded: drawing || (image.complete && image.naturalWidth > 0), x: box.x, y: box.y, width: box.width, height: box.height, slot: { x: parent.x, y: parent.y, width: parent.width, height: parent.height }, fit: getComputedStyle(image).objectFit };
       }),
       sections: Object.fromEntries(['.brand-visual', '.hero-photo', '.news', '.philosophy', '.craft', '.lower-content', '.works', '.events', '.contact', '.footer', '.primary-nav a', '.philosophy-copy', '.craft-list', '.works-more', '.contact-link', '.contact-phone', '.contact-intro', '.philosophy-body', '.news-more'].map(selector => {
         const box = document.querySelector(selector).getBoundingClientRect();
@@ -48,15 +63,26 @@ try {
     }));
     assert.equal(geometry.scrollWidth, width, `Horizontal overflow at ${width}px`);
     assert(geometry.fontLoaded, 'The Figma font must be loaded');
-    for (const [selector, size] of Object.entries(geometry.bodyFonts)) assert.equal(size, '16px', `Body text at ${width}px: ${selector}`);
+    for (const [selector, size] of Object.entries(geometry.bodyFonts)) {
+      if (width <= 600 && selector !== '.text-link') {
+        assert.equal(parseFloat(size), 15, `Mobile body text must be 15px: ${selector}`);
+        continue;
+      }
+      const minimum = selector === '.text-link' ? 14 : 16;
+      assert(parseFloat(size) >= minimum && parseFloat(size) <= 18, `Text must stay between ${minimum} and 18px at ${width}px: ${selector}, got ${size}`);
+    }
+    for (const heading of geometry.headings) assert.deepEqual(heading.style, geometry.headings[0].style, `Common H2 style at ${width}px: ${heading.id}`);
     assert.deepEqual(geometry.overflowingText, [], `Text must fit its container at ${width}px`);
     assert(geometry.assets.every(asset => asset.loaded), `Asset missing at ${width}px`);
     assert.deepEqual(errors, [], `Browser errors at ${width}px`);
     if (width > 900) {
       for (const [selector, gap] of Object.entries(geometry.rightGaps)) {
-        const expected = ['.brand-visual', '.hero-photo', '.contact'].includes(selector) ? 0 : 64;
+        if (selector === '.news') continue;
+        const photo = ['.philosophy-sub', '.craft-photo', '.work-photo', '.event-sub .event-photo'].includes(selector);
+        const expected = ['.brand-visual', '.hero-photo', '.contact'].includes(selector) ? 0 : geometry.layout.gutter + (photo ? geometry.layout.inset : 0);
         assert(Math.abs(gap - expected) < 1, `Right edge at ${width}px for ${selector}: expected ${expected}px, got ${gap}px`);
       }
+      assert(Math.abs(geometry.sections['.news'].width - Math.min(750, geometry.sections['.hero-photo'].width - geometry.layout.gutter)) < 1, `News list measure at ${width}px`);
     }
     if ([1280, 1920, 768, 390].includes(width)) {
       const label = width <= 600 ? 'mobile' : width <= 900 ? 'tablet' : 'desktop';
@@ -87,8 +113,9 @@ try {
           }
         }
       }
-      results.interactions.push('Body text and regular links are 16px at every tested width; sections do not overlap');
-      results.interactions.push('FV/contact reach the right edge; other desktop sections and their rightmost photos have a 64px right gutter');
+      results.interactions.push('Body text is 15px on mobile and 16–18px elsewhere; detail links stay between 14 and 18px; sections do not overlap');
+      results.interactions.push('Section and detail dialog H2s share the same typography and margins; news uses its own style');
+      results.interactions.push('FV/contact reach the right edge; photo sections respect the fluid gutter and maximum content width; news list is at most 750px wide');
       results.interactions.push('All 13 supplied photos/drawings are retained; photos fill their frames and SVG dimensions are preserved');
       const initialTop = await page.locator('.sidebar').evaluate(node => node.getBoundingClientRect().top);
       await page.evaluate(() => scrollTo(0, 2400));

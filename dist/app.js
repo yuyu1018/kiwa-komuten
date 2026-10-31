@@ -76,6 +76,7 @@ function openDetail(key, trigger) {
     [copy, ...copy.querySelectorAll('*')].forEach(node => {
       node.removeAttribute('id');
       node.removeAttribute('class');
+      node.removeAttribute('data-reveal');
     });
     if (key === 'works-list') {
       copy.querySelectorAll('article').forEach((article, index) => {
@@ -119,3 +120,52 @@ dialog.addEventListener('close', () => {
   if (returnFocus?.isConnected && returnFocus.getClientRects().length) returnFocus.focus({ preventScroll: true });
   else if (menuButton.getClientRects().length) menuButton.focus({ preventScroll: true });
 });
+
+// Scroll reveals are progressive: content stays visible without JS or observation support.
+function initScrollReveals() {
+  const elements = [...document.querySelectorAll('[data-reveal]')];
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+
+  let observer;
+  function reveal(element, immediate = false) {
+    if (immediate) element.classList.add('is-reveal-immediate');
+    element.classList.remove('is-reveal-pending');
+    observer?.unobserve(element);
+  }
+  function revealAll() {
+    observer?.disconnect();
+    elements.forEach(element => reveal(element, true));
+  }
+
+  try {
+    observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) reveal(entry.target);
+      }
+    }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+    for (const element of elements) {
+      element.classList.add('is-reveal-pending');
+      observer.observe(element);
+    }
+  } catch {
+    revealAll();
+    return;
+  }
+
+  // Keyboard navigation, printing, and preference changes must never hide content.
+  document.addEventListener('focusin', event => {
+    let element = event.target.closest('[data-reveal]');
+    while (element) {
+      reveal(element, true);
+      element = element.parentElement?.closest('[data-reveal]');
+    }
+  });
+  reducedMotion.addEventListener('change', event => {
+    if (event.matches) revealAll();
+  });
+  window.addEventListener('beforeprint', revealAll);
+}
+
+initScrollReveals();

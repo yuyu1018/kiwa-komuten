@@ -5,9 +5,9 @@
   "type": "module",
   "description": "木和工務店トップページ — HTML / CSS / JavaScript",
   "scripts": {
-    "dev": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs --live",
     "start": "node scripts/serve.mjs",
-    "check": "node --check dist/app.js && node --check scripts/serve.mjs",
+    "check": "node --check dist/app.js && node --check scripts/serve.mjs && node --check scripts/live-client.js",
     "qa": "node scripts/qa.mjs",
     "compare": "node scripts/compare.mjs"
   },
