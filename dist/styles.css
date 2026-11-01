@@ -428,7 +428,7 @@ h2 {
   display: flex;
   flex-direction: row-reverse;
   gap: clamp(5px, 0.78125vw, 10px);
-  font-size: clamp(1rem, 0.875rem + 0.625vw, 1.375rem);
+  font-size: clamp(0.875rem, 0.8rem + 0.625vw, 1.375rem);
   line-height: 1.25;
   letter-spacing: clamp(3px, 0.46875vw, 6px);
 }
@@ -469,7 +469,7 @@ h2 {
   }
 
   .hero-heading {
-    top: 5px;
+    top: 10px;
     left: 11vw;
   }
   .house-family {
