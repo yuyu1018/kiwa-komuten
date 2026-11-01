@@ -40,11 +40,21 @@
   --font-small: clamp(0.875rem, 0.8125rem + 0.078125vw, 1rem);
   --font-section: clamp(1.5rem, 1.125rem + 1vw, 2.25rem);
   --font-card: clamp(1.0625rem, 1rem + 0.125vw, 1.25rem);
-  /* アニメーションの速さ・移動量・カードの表示間隔。 */
-  --reveal-duration: 800ms;
-  --reveal-distance: 12px;
-  --reveal-stagger: 100ms;
-  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  /* 行間は用途ごとに管理。スマホ用の値は600px以下でまとめて切り替える。 */
+  --line-height-body: 2.4;
+  --line-height-copy: 2.2;
+  --line-height-intro: 2.3;
+  --line-height-heading: 1.8;
+  --line-height-meta: 2;
+  /* 写真の開き・内側のズーム・文章の余韻を分けて調整する。 */
+  --reveal-duration: 1000ms;
+  --reveal-photo-duration: 1400ms;
+  --reveal-zoom-duration: 2000ms;
+  --reveal-distance: 4px;
+  --reveal-copy-delay: 220ms;
+  --reveal-photo-scale: 1.045;
+  --reveal-stagger: 80ms;
+  --reveal-easing: cubic-bezier(0.16, 1, 0.3, 1);
 }
 *,
 *::before,
@@ -60,7 +70,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 400 var(--font-body)/2.4 var(--serif);
+  font: 400 var(--font-body)/var(--line-height-body) var(--serif);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
@@ -126,6 +136,16 @@ button:focus-visible {
     scroll-padding-top: 104px;
   }
 }
+@media (max-width: 600px) {
+  :root {
+    --font-body: 0.9375rem; /* スマホの本文は15px。 */
+    --line-height-body: 2;
+    --line-height-copy: 1.9;
+    --line-height-intro: 2;
+    --line-height-heading: 1.6;
+    --line-height-meta: 1.8;
+  }
+}
 
 /* 02. ページレイアウト */
 .main-content,
@@ -138,9 +158,24 @@ button:focus-visible {
 .philosophy,
 .craft,
 .works,
-.events{
+.events {
   margin-right: var(--content-gutter);
   padding-inline: var(--content-inset);
+}
+/* FV・お問い合わせは左端だけ写真列に揃え、右端は画面端まで広げる。 */
+.brand-visual,
+.hero-photo,
+.contact {
+  width: calc(100% - var(--content-inset));
+  margin-inline: var(--content-inset) 0;
+}
+@media (max-width: 900px) {
+  .brand-visual,
+  .hero-photo,
+  .contact {
+    width: calc(100% - var(--mobile-gutter));
+    margin-inline: var(--mobile-gutter) 0;
+  }
 }
 .lower-content {
   position: relative;
@@ -170,7 +205,7 @@ button:focus-visible {
 h2 {
   margin-top: 1rem;
   font-size: var(--font-section);
-  line-height: 1.8;
+  line-height: var(--line-height-heading);
   letter-spacing: clamp(0.125rem, 0.234375vw, 0.1875rem);
 }
 .brand {
@@ -408,7 +443,7 @@ h2 {
   margin-top: 22px;
 }
 .house-family {
-  width: clamp(25rem, 51vw, 45.9375rem);
+  width: clamp(22rem, 51vw, 45.9375rem);
   aspect-ratio: 652 / 319;
   bottom: 0;
   right: -101px;
@@ -434,10 +469,11 @@ h2 {
   }
 
   .hero-heading {
+    top: 5px;
     left: 11vw;
   }
   .house-family {
-    left: calc(25% + 10px);
+    left: calc(18% + 10px);
   }
 }
 
@@ -529,6 +565,7 @@ h2 {
   .news-list a {
     grid-template-columns: minmax(0, 1fr) 23px;
     gap: 8px 16px;
+    font-size: 15px;
   }
   .news-list time {
     grid-column: 1;
@@ -588,7 +625,7 @@ h2 {
 .philosophy-body {
   max-width: 26rem;
   margin-top: 30px;
-  line-height: 2.4;
+  line-height: var(--line-height-body);
   letter-spacing: 1px;
 }
 .philosophy-body p + p {
@@ -599,10 +636,18 @@ h2 {
 }
 .botanical-position {
   --botanical-width: clamp(11rem, 20vw, 16rem);
-  right: calc(-1 * var(--content-gutter));
+  --botanical-bleed: 6%;
+  /* 根元を画面外に隠し、内側余白が増える大画面でも右端から伸ばす。 */
+  right: calc(
+    -1 * (var(--content-gutter) + var(--content-inset))
+  );
   bottom: calc(-1 * clamp(4.4375rem, 9vw, 7.1875rem));
   width: var(--botanical-width);
   aspect-ratio: 213 / 68;
+}
+.botanical-branch {
+  transform-box: view-box;
+  transform: translateX(var(--botanical-bleed));
 }
 @media (max-width: 900px) {
   .philosophy {
@@ -663,7 +708,7 @@ h2 {
 .craft-intro {
   margin-top: 24px;
   color: var(--muted);
-  line-height: 2.2;
+  line-height: var(--line-height-copy);
   letter-spacing: 1px;
 }
 .craft-list {
@@ -696,7 +741,7 @@ h2 {
   margin-top: 8px;
   padding-bottom: 24px;
   color: var(--muted);
-  line-height: 2.2;
+  line-height: var(--line-height-copy);
   letter-spacing: 0.5px;
 }
 .craft-more {
@@ -759,6 +804,9 @@ h2 {
   .craft-list p {
     max-width: 250px;
   }
+  .craft-list h3 {
+    line-height: var(--line-height-heading);
+  }
   .craft-photo {
     width: clamp(min(100%, 17rem), 84%, 30rem);
     margin-left: auto;
@@ -771,7 +819,7 @@ h2 {
 }
 .works-intro {
   margin-top: 24px;
-  line-height: 2.3;
+  line-height: var(--line-height-intro);
   letter-spacing: 2px;
 }
 .works-grid {
@@ -820,7 +868,7 @@ h2 {
 .work-description {
   margin-top: 10px;
   color: var(--muted);
-  line-height: 2.2;
+  line-height: var(--line-height-copy);
   letter-spacing: 0.5px;
 }
 .work-area {
@@ -828,9 +876,8 @@ h2 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 16px;
-  color: var(--muted);
   font-size: var(--font-small);
-  line-height: 2;
+  line-height: var(--line-height-meta);
   letter-spacing: 0.5px;
 }
 .work-card .text-link {
@@ -865,6 +912,9 @@ h2 {
   }
   .work-card {
     width: clamp(min(100%, 16rem), 86%, 26rem);
+  }
+  .work-card h3 {
+    line-height: var(--line-height-heading);
   }
   .work-card:nth-child(2) {
     padding-top: 0;
@@ -903,7 +953,7 @@ h2 {
 }
 .events-intro {
   margin-top: 24px;
-  line-height: 2.3;
+  line-height: var(--line-height-intro);
   letter-spacing: 1px;
 }
 .events-grid {
@@ -941,13 +991,13 @@ h2 {
   column-gap: 20px;
   row-gap: 12px;
   margin-top: 24px;
-  line-height: 2;
+  line-height: var(--line-height-meta);
   letter-spacing: 0.5px;
 }
 .event-description {
   max-width: 25.2rem;
   margin-top: 18px;
-  line-height: 2.2;
+  line-height: var(--line-height-copy);
   letter-spacing: 0.5px;
 }
 @media (max-width: 900px) {
@@ -968,6 +1018,9 @@ h2 {
   .events-heading {
     margin-bottom: 32px;
   }
+  .event-card h3 {
+    line-height: var(--line-height-heading);
+  }
   .events-grid {
     grid-template-columns: 1fr;
     gap: 56px;
@@ -986,10 +1039,8 @@ h2 {
 .contact {
   position: relative;
   margin-top: var(--section-gap);
-  width: 100%;
   min-height: 528px;
-  padding: clamp(3rem, 5.625vw, 4.5rem)
-    calc(var(--content-inset) + clamp(1.5rem, 5vw, 4rem));
+  padding: clamp(3rem, 5.625vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
   background: #625e59;
   color: #f7f5f1;
   overflow: hidden;
@@ -1000,7 +1051,7 @@ h2 {
 }
 .contact-intro {
   margin-top: 22px;
-  line-height: 2.3;
+  line-height: var(--line-height-intro);
   letter-spacing: 1px;
 }
 .contact-phone {
@@ -1022,7 +1073,7 @@ h2 {
   margin-top: 16px;
   color: #dedad3;
   font-size: var(--font-small);
-  line-height: 2;
+  line-height: var(--line-height-meta);
   letter-spacing: 1px;
 }
 .contact-link {
@@ -1045,19 +1096,23 @@ h2 {
   min-width: 0;
 }
 .open-door {
-  right: calc(var(--content-inset) + clamp(1.5rem, 5vw, 4rem));
+  right: clamp(1.5rem, 5vw, 4rem);
   bottom: 0;
   width: var(--door-width);
   opacity: 0.6;
   aspect-ratio: 280 / 272;
 }
+@media (max-width: 1100px) {
+  .contact {
+    padding-bottom: calc(var(--door-width) * 272 / 280 + 1.5rem);
+  }
+}
 @media (max-width: 900px) {
   .contact {
-    width: calc(100% - var(--mobile-gutter));
     min-height: 490px;
-    margin: 100px 0 0 var(--mobile-gutter);
-    padding: clamp(3rem, 6vw, 3.5rem) var(--mobile-gutter)
-      calc(var(--door-width) * 272 / 280 + 1.5rem);
+    margin-top: 100px;
+    padding-top: clamp(3rem, 6vw, 3.5rem);
+    padding-inline: var(--mobile-gutter);
   }
 }
 @media (max-width: 600px) {
@@ -1217,7 +1272,7 @@ h2 {
 }
 #dialog-content {
   margin-top: 24px;
-  line-height: 2.2;
+  line-height: var(--line-height-copy);
 }
 #dialog-content p + p,
 #dialog-content h3 {
@@ -1244,30 +1299,85 @@ body.dialog-open {
 }
 
 /* 14. アニメーション */
-/* 通常は表示。JSで監視を始めた要素だけを、一度だけフェードインさせる。 */
+/* 写真枠は固定し、画像のマスク・ズームと文章の表示を別々に動かす。 */
 [data-reveal] {
   transition:
     opacity var(--reveal-duration) var(--reveal-easing) var(--reveal-delay, 0ms),
     translate var(--reveal-duration) var(--reveal-easing)
       var(--reveal-delay, 0ms);
 }
-[data-reveal="photo"] {
-  --reveal-duration: 900ms;
-}
 [data-reveal="copy"] {
-  --reveal-delay: 120ms;
+  --reveal-delay: var(--reveal-copy-delay);
 }
 [data-reveal="drawing"] {
-  --reveal-duration: 1000ms;
+  --reveal-duration: 1500ms;
   --reveal-distance: 0px;
+  --reveal-delay: 320ms;
 }
-[data-reveal].is-reveal-pending {
-  opacity: 0;
-  translate: 0 var(--reveal-distance);
-  transition: none;
+/* 写真の外枠とカード自体は、表示前も移動させない。 */
+.hero-photo > img,
+.photo > img {
+  clip-path: inset(0 0 0 0);
+  transform: scale(1);
+  filter: brightness(1) saturate(1);
+  transition:
+    clip-path var(--reveal-photo-duration) var(--reveal-easing)
+      var(--reveal-delay, 0ms),
+    transform var(--reveal-zoom-duration) var(--reveal-easing)
+      var(--reveal-delay, 0ms),
+    filter var(--reveal-photo-duration) var(--reveal-easing)
+      var(--reveal-delay, 0ms),
+    scale 1100ms var(--reveal-easing);
 }
-[data-reveal].is-reveal-immediate {
-  transition: none;
+.work-copy {
+  transition:
+    opacity var(--reveal-duration) var(--reveal-easing),
+    translate var(--reveal-duration) var(--reveal-easing);
+  transition-delay: calc(var(--reveal-delay, 0ms) + var(--reveal-copy-delay));
+}
+[data-reveal="photo"] .drawing {
+  transition: opacity 1500ms var(--reveal-easing)
+    calc(var(--reveal-delay, 0ms) + 320ms);
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  /*
+ 表示待ち状態は、動きを許可した画面表示にだけ適用する。
+ */
+  [data-reveal].is-reveal-pending {
+    opacity: 0;
+    translate: 0 var(--reveal-distance);
+    transition: none;
+  }
+  [data-reveal="photo"].is-reveal-pending,
+  [data-reveal="card"].is-reveal-pending {
+    opacity: 1;
+    translate: none;
+  }
+  .hero-photo.is-reveal-pending > img,
+  .photo[data-reveal].is-reveal-pending > img,
+  :is([data-reveal="photo"], [data-reveal="card"]).is-reveal-pending
+    .photo
+    > img {
+    clip-path: inset(0 0 100% 0);
+    transform: scale(var(--reveal-photo-scale));
+    filter: brightness(0.92) saturate(0.94);
+    transition: none;
+  }
+  [data-reveal="card"].is-reveal-pending .work-copy {
+    opacity: 0;
+    translate: 0 var(--reveal-distance);
+    transition: none;
+  }
+  [data-reveal="photo"].is-reveal-pending .drawing {
+    opacity: 0;
+    transition: none;
+  }
+}
+[data-reveal].is-reveal-immediate,
+[data-reveal].is-reveal-immediate img,
+[data-reveal].is-reveal-immediate .work-copy,
+[data-reveal].is-reveal-immediate .drawing {
+  transition: none !important;
 }
 @media (min-width: 601px) {
   .works-grid > [data-reveal="card"]:nth-child(2) {
@@ -1277,16 +1387,44 @@ body.dialog-open {
     --reveal-delay: calc(var(--reveal-stagger) * 2);
   }
 }
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .photo img {
-    transition: scale 650ms var(--reveal-easing);
-  }
-  .photo:hover img,
-  .photo:focus-visible img {
-    scale: 1.025;
+@media (max-width: 600px) {
+  :root {
+    --reveal-duration: 850ms;
+    --reveal-photo-duration: 1100ms;
+    --reveal-zoom-duration: 1600ms;
+    --reveal-copy-delay: 160ms;
+    --reveal-distance: 3px;
   }
 }
-@media (prefers-reduced-motion: reduce) {
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .photo:hover img,
+  .photo:focus-visible img {
+    scale: 1.015;
+  }
+  .text-link {
+    position: relative;
+  }
+  .text-link::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 -1px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 700ms var(--reveal-easing);
+    pointer-events: none;
+  }
+  .text-link:hover::after,
+  .text-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+  .text-link img,
+  .contact-link > img:last-child {
+    transition: translate 650ms var(--reveal-easing);
+  }
+}
+@media (prefers-reduced-motion: reduce), print {
   html {
     scroll-behavior: auto;
   }
@@ -1295,15 +1433,11 @@ body.dialog-open {
   *::after {
     transition: none !important;
   }
-  [data-reveal].is-reveal-pending {
-    opacity: 1;
-    translate: none;
-  }
-}
-@media print {
-  [data-reveal] {
-    opacity: 1 !important;
-    translate: none !important;
-    transition: none !important;
+  .hero-photo > img,
+  .photo > img {
+    clip-path: none !important;
+    transform: none !important;
+    filter: none !important;
+    scale: none !important;
   }
 }

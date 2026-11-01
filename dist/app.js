@@ -132,6 +132,11 @@ function initScrollReveals() {
     if (immediate) element.classList.add('is-reveal-immediate');
     element.classList.remove('is-reveal-pending');
     observer?.unobserve(element);
+    if (immediate) {
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        element.classList.remove('is-reveal-immediate');
+      }));
+    }
   }
   function revealAll() {
     observer?.disconnect();

@@ -42,6 +42,10 @@ try {
         gutter: parseFloat(getComputedStyle(document.querySelector('.philosophy')).marginRight),
         inset: parseFloat(getComputedStyle(document.querySelector('.philosophy')).paddingRight)
       },
+      frames: Object.fromEntries(['.brand-visual', '.hero-photo', '.contact', '.philosophy-grid', '.craft-grid', '.works-grid', '.events-grid'].map(selector => {
+        const box = document.querySelector(selector).getBoundingClientRect();
+        return [selector, { x: box.x, width: box.width, right: box.right }];
+      })),
       rightGaps: Object.fromEntries(['.brand-visual', '.hero-photo', '.contact', '.news', '.philosophy', '.craft', '.works', '.events', '.footer', '.philosophy-sub', '.craft-photo', '.work-photo', '.event-sub .event-photo'].map(selector => [selector, innerWidth - (selector === '.work-photo' ? Math.max(...[...document.querySelectorAll(selector)].map(node => node.getBoundingClientRect().right)) : document.querySelector(selector).getBoundingClientRect().right)])),
       bodyFonts: Object.fromEntries(['body', '.philosophy-body', '.craft-intro', '.craft-list p', '.work-description', '.event-description', '.contact-intro', '.news-summary', '.text-link', '.contact-link', '.primary-nav a', '.footer-nav a', '#dialog-content'].map(selector => [selector, getComputedStyle(document.querySelector(selector)).fontSize])),
       headings: [...document.querySelectorAll('h2:not(#news-heading)')].map(node => {
@@ -75,14 +79,21 @@ try {
     assert.deepEqual(geometry.overflowingText, [], `Text must fit its container at ${width}px`);
     assert(geometry.assets.every(asset => asset.loaded), `Asset missing at ${width}px`);
     assert.deepEqual(errors, [], `Browser errors at ${width}px`);
+    for (const [selector, frame] of Object.entries(geometry.frames)) {
+      const fullBleed = ['.brand-visual', '.hero-photo', '.contact'].includes(selector);
+      for (const property of fullBleed ? ['x'] : ['x', 'width', 'right']) assert(Math.abs(frame[property] - geometry.frames['.works-grid'][property]) < 1, `Aligned section at ${width}px: ${selector} ${property}`);
+      if (fullBleed) assert(Math.abs(frame.right - width) < 1, `FV/contact reach the right edge at ${width}px: ${selector}`);
+      else assert(frame.width <= 1281, `Content width is capped at ${width}px: ${selector}`);
+    }
     if (width > 900) {
       for (const [selector, gap] of Object.entries(geometry.rightGaps)) {
         if (selector === '.news') continue;
         const photo = ['.philosophy-sub', '.craft-photo', '.work-photo', '.event-sub .event-photo'].includes(selector);
-        const expected = ['.brand-visual', '.hero-photo', '.contact'].includes(selector) ? 0 : geometry.layout.gutter + (photo ? geometry.layout.inset : 0);
+        const framed = ['.brand-visual', '.hero-photo', '.contact'].includes(selector);
+        const expected = selector === '.footer' || framed ? 0 : geometry.layout.gutter + (photo ? geometry.layout.inset : 0);
         assert(Math.abs(gap - expected) < 1, `Right edge at ${width}px for ${selector}: expected ${expected}px, got ${gap}px`);
       }
-      assert(Math.abs(geometry.sections['.news'].width - Math.min(750, geometry.sections['.hero-photo'].width - geometry.layout.gutter)) < 1, `News list measure at ${width}px`);
+      assert(Math.abs(geometry.sections['.news'].width - Math.min(750, geometry.frames['.works-grid'].width)) < 1, `News list measure at ${width}px`);
     }
     if ([1280, 1920, 768, 390].includes(width)) {
       const label = width <= 600 ? 'mobile' : width <= 900 ? 'tablet' : 'desktop';
@@ -115,7 +126,7 @@ try {
       }
       results.interactions.push('Body text is 15px on mobile and 16–18px elsewhere; detail links stay between 14 and 18px; sections do not overlap');
       results.interactions.push('Section and detail dialog H2s share the same typography and margins; news uses its own style');
-      results.interactions.push('FV/contact reach the right edge; photo sections respect the fluid gutter and maximum content width; news list is at most 750px wide');
+      results.interactions.push('FV and contact align with the left edge of photo grids and extend to the right viewport edge; photo grids are capped at 1280px');
       results.interactions.push('All 13 supplied photos/drawings are retained; photos fill their frames and SVG dimensions are preserved');
       const initialTop = await page.locator('.sidebar').evaluate(node => node.getBoundingClientRect().top);
       await page.evaluate(() => scrollTo(0, 2400));
